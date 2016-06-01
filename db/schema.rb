@@ -11,7 +11,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601121453) do
+ActiveRecord::Schema.define(version: 20160601213541) do
+
+  create_table "bumpers", force: :cascade do |t|
+    t.integer  "led_id"
+    t.string   "description"
+    t.float    "weight"
+    t.float    "height"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "bumpers", ["led_id"], name: "index_bumpers_on_led_id"
+
+  create_table "leds", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "model"
+    t.string   "brand"
+    t.float    "panelsize_w"
+    t.float    "panelsize_h"
+    t.float    "panelweight"
+    t.float    "pixelmatrix_w"
+    t.float    "pixelmatrix_h"
+    t.float    "poweramp110"
+    t.float    "poweramp220"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  add_index "leds", ["user_id"], name: "index_leds_on_user_id"
+
+  create_table "screens", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "aspectratio"
+    t.float    "width"
+    t.float    "height"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "screens", ["user_id"], name: "index_screens_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

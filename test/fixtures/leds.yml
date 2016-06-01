@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  model: MyString
+  brand: MyString
+  panelsize_w: 1.5
+  panelsize_h: 1.5
+  panelweight: 1.5
+  pixelmatrix_w: 1.5
+  pixelmatrix_h: 1.5
+  poweramp110: 1.5
+  poweramp220: 1.5
+
+two:
+  model: MyString
+  brand: MyString
+  panelsize_w: 1.5
+  panelsize_h: 1.5
+  panelweight: 1.5
+  pixelmatrix_w: 1.5
+  pixelmatrix_h: 1.5
+  poweramp110: 1.5
+  poweramp220: 1.5
