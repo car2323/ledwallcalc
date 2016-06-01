@@ -4,11 +4,9 @@ class ApplicationController < ActionController::Base
    protect_from_forgery with: :exception
    before_action :permit_extra_divise_fields, if: :devise_controller?
 
-
-
   protected
     def permit_extra_divise_fields
-       devise_parameter_sanitizer.for(:account_update)
-    	 devise_parameter_sanitizer.for(:sign_up)
+       devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:sign_up) << :name
     end
 end
