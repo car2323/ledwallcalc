@@ -1,0 +1,2 @@
+class BumpersController < ApplicationController
+end
