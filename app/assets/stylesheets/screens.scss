@@ -1,3 +1,23 @@
 // Place all the styles related to the screens controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.ledcol{
+  margin: 9px;
+  height: 315px;
+  overflow-y: auto;
+  background-color: rgba(173, 172, 172, 0.16);
+}
+.screencol{
+  margin: 9px;
+  height: 315px;
+  overflow-y: auto;
+  background-color: rgba(173, 172, 172, 0.16);
+}
+.letterlist{
+   font-size: 11px;
+   text-align: left;
+}
+ul{
+   list-style-type: none;
+   padding-left: 0;
+}

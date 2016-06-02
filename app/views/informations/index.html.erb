@@ -33,9 +33,9 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="/">
-                        LED Wall Calculator
+                <li>
+                    <a href="/"> <!--class="sidebar-brand"-->
+                        Home
                     </a>
                 </li>
                 <li>
@@ -50,6 +50,13 @@
                  
                    
                   <%end%>
+                </li>
+                <li>
+                    <t>________________________________</t>
+                </li>
+                <li>
+                    <a href="#">LED Wall Calculator</a>
+                </li>
                 <li>
                     <t>________________________________</t>
                 </li>
@@ -75,12 +82,8 @@
                 <li>
                     <a href="#">DELETE Screen</a>
                 </li>
-                <li>
-                    <t>________________________________</t>
-                </li>
-                <li>
-                    <a href="#">LED Wall Calculator</a>
-                </li>
+                
+                
             </ul>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -95,12 +98,74 @@
 
 <!--list with all led wall-->
 
+       <div class="row">
 
+              
+            <div class="col-sm-2 ledcol">
+                <br>
+                 <strong class="colororange">LED Panels</strong><p>
+                 <br>
+                <ul>
+                  <%if @leds.length > 0%>
+                    <% @leds.each do |one_led|%>
+                       <a href="/leds/<%=one_led.id%>">
+                       <li class="letterlist">
+                         <strong> Model: </strong><%=one_led.model%><br>
+                         <strong> Brand: </strong><%=one_led.brand%>
+                       </li>
+                       </a><br>
+                    <%end%>
+                  <%end%>
+                </ul>
+             </div><!-- 1er column--> 
+             <div class="col-sm-2 screencol">
+                <br>
+                 <strong class="colororange">Screens</strong><p>
+                 <br>
+                <ul>
+                  <%if @screens.length > 0%>
+                    <% @screens.each do |one_screen|%>
+                       <a href="/screens/<%=one_screen.id%>">
+                       <li class="letterlist">
+                         <strong> Aspect Ratio: </strong><%=one_screen.aspectratio%><br>
+                         <strong> Width: </strong><%=one_screen.width%> 
+                         <strong> Height: </strong><%=one_screen.height%>
+                       </li>
+                       </a><br>
+                    <%end%>
+                  <%end%>
+                </ul>
+             </div><!-- 2da column--> 
 
+              <!-- agregue el modal que va a destruir mi codigo-->
 
+                  <div class="modal fade js-modal">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
 
+                        <div class="modal-header">
+                          <!-- Close button -->
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span>&times;</span>
+                          </button>
+
+                          <h2 class="modal_title"></h2>
+                        </div>
+
+                        <div class="modal-body">
+                          <p>This is the modal's body.</p>
+                        </div>
+
+                      </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                  </div><!-- /.modal -->
+
+            <!-- final del modal que va a destruir mi codigo-->
+
+        </div><!-- 4ta row close-->
 
 <!--end list with all led wall-->
+
 
 
                     </div>
