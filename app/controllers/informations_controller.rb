@@ -5,5 +5,4 @@ class InformationsController < ApplicationController
 		@screens = Screen.all
 	end
 
-
 end

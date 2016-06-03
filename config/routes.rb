@@ -7,7 +7,17 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {registrations: "registrations", sessions: "sessions"}
 
-get 'informations' => 'informations#index'
+  get 'informations' => 'informations#index'
+
+  resources :users do
+      resources :leds
+      resources :screens
+  end
+  resources :leds do
+      resources :bumpers
+  end
+  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
