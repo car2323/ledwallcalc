@@ -81,45 +81,46 @@
                 <div class="row">
                     <div class="col-lg-12">
                         
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Sidebar Menu</a>
+                        
 
 <!--begin formulario new led-->
 
        <div class="row">
-
-            <h1>Add new LED PANEL</h1>
+        <div class="col-sm-4 ledcolnew">
+            <h4 class="colorblue">Add new LED Panel</h4>
             <%= form_for [@my_led] do |f|%>
-			 <%= f.label :model%> :
-			 <%= f.text_field :model, class: "form-control"%>
+				 <%= f.label :model%> :
+				 <%= f.text_field :model, class: "form-control"%>
 
-			 <%= f.label :brand%> :
-			 <%= f.text_field :brand, class: "form-control"%>
+				 <%= f.label :brand%> :
+				 <%= f.text_field :brand, class: "form-control"%>
 
-			 <%= f.label :Panel_Size_With%> :
-			 <%= f.number_field :panelsize_w, class: "form-control"%>
+				 <%= f.label :Panel_Size_With%> :
+				 <%= f.number_field :panelsize_w, class: "form-control"%>
 
-			 <%= f.label :Panel_Size_Heith%> :
-			 <%= f.number_field :panelsize_h, class: "form-control"%>
+				 <%= f.label :Panel_Size_Heith%> :
+				 <%= f.number_field :panelsize_h, class: "form-control"%>
 
-		     <%= f.label :Panel_Weight%> :
-			 <%= f.number_field :panelweight, class: "form-control"%>
+			     <%= f.label :Panel_Weight%> :
+				 <%= f.number_field :panelweight, class: "form-control"%>
 
-		    <%= f.label :Pixel_Matrix_With%> :
-			 <%= f.number_field :pixelmatrix_w, class: "form-control"%>
+			    <%= f.label :Pixel_Matrix_With%> :
+				 <%= f.number_field :pixelmatrix_w, class: "form-control"%>
 
-			 <%= f.label :Pixel_Matrix_Heith%> :
-			 <%= f.number_field :pixelmatrix_h, class: "form-control"%>
+				 <%= f.label :Pixel_Matrix_Heith%> :
+				 <%= f.number_field :pixelmatrix_h, class: "form-control"%>
 
-		     <%= f.label :Power_amp_110_V%> :
-			 <%= f.number_field :poweramp110, class: "form-control"%>
+			     <%= f.label :Power_amp_110_V%> :
+				 <%= f.number_field :poweramp110, class: "form-control"%>
 
-		     <%= f.label :Power_amp_220_V%> :
-			 <%= f.number_field :poweramp220, class: "form-control"%>
-
-		     <br>
-			 <%= f.button "Add new", class:"btn btn-primary"%>
-        <%end%>
-            
+			     <%= f.label :Power_amp_220_V%> :
+				 <%= f.number_field :poweramp220, class: "form-control"%>
+            </div>  
+			     <br>
+				 <%= f.button "Add new", class:"btn btn-primary"%>
+				 <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Sidebar Menu</a>
+             <%end%>
+          
         </div><!-- 4ta row close-->
 
 <!--end fomulario-->
