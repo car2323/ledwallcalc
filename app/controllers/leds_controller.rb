@@ -35,7 +35,29 @@ class LedsController < ApplicationController
            redirect_to "/informations"
                
 	end
+	def edit
+     @one_ledpanel = Led.find_by(id: params[:id])
+	end
     def  update
 	  @one_ledpanel = Led.find_by(id: params[:id])
+      if params[:led]!= nil
+	      if @one_ledpanel.update(
+				:model => params[:led][:model],
+				:brand => params[:led][:brand],
+				:panelsize_w => params[:led][:panelsize_w],
+	            :panelsize_h => params[:led][:panelsize_h],
+				:panelweight => params[:led][:panelweight],
+				:pixelmatrix_w => params[:led][:pixelmatrix_w],
+				:pixelmatrix_h => params[:led][:pixelmatrix_h],
+				:poweramp110 => params[:led][:poweramp110],
+				:poweramp220 => params[:led][:poweramp220])
+	            redirect_to "/informations"
+	      else
+            render "update"
+          end
+      else
+       	    render "edit"
+      end
+		
 	end
 end
