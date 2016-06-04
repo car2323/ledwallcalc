@@ -35,7 +35,7 @@ class LedsController < ApplicationController
            redirect_to "/informations"
                
 	end
-    def  edit
+    def  update
 	  @one_ledpanel = Led.find_by(id: params[:id])
 	end
 end

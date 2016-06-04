@@ -60,15 +60,10 @@
                 </li>
 
                 <li>
-                    <a href="/leds/update">UPDATE LED Panel</a>
+                   <a href="/leds/<%=@one_ledpanel.id%>" data-method="PUT">UPDATE LED Panel</a>
                 </li>
-                 <li>
-                    <t>________________________________</t>
-                </li>
-                <li>
-                    <a href="/leds/<%=@one_ledpanel.id%>" data-confirm="Are you sure you want a DELETE this LED Panel?" data-method="DELETE">DELETE LED Panel</a>
-                   
-                </li>
+                 
+                
                 
                 <li>
                     <t>________________________________</t>
@@ -93,11 +88,10 @@
 <!--begin formulario new led-->
 
        <div class="row">
-         <div class="col-sm-3 ledcolshow">
-             <h4 class="colorblue">LED Panel UPDATE</h4>
+         <div class="col-sm-3 ledcolupdate">
+             <h4 class="colororange">LED Panel UPDATE</h4>
 
-
-              <%= form_for [@my_led] do |f|%>
+              <%= form_for [@one_ledpanel] do |f|%>
                  <%= f.label :model%> :
                  <%= f.text_field :model, class: "form-control"%>
 
@@ -127,47 +121,9 @@
 
             </div>  
                  <br>
-                 <%= f.button "Add new", class:"btn btn-primary"%>
+                 <%= f.button "UPDATE", class:"btn btn-warning"%>
                  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Sidebar Menu</a>
              <%end%>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-             <br>
-                <ul>
-                    
-                       <li class="letterlistdetails">
-                         <strong> Model: </strong><%=@one_ledpanel.model%><br>
-                         <strong> Brand: </strong><%=@one_ledpanel.brand%><br>
-                         <br>
-                         <strong> Panel size With: </strong><%=@one_ledpanel.panelsize_w%> inch<br>
-                         <strong> Panel size Heith: </strong><%=@one_ledpanel.panelsize_h%> inch<br>
-                         <br>
-                         <strong> Panel Weight: </strong><%=@one_ledpanel.panelweight%> lbs<br>
-                         <br>
-                         <strong> Pixel Matrix With: </strong><%=@one_ledpanel.pixelmatrix_w%> px<br>
-                         <strong> Pixel Matrix Heith: </strong><%=@one_ledpanel.pixelmatrix_h%> px<br>
-                         <br>
-                         <strong> Power AMP 110 V: </strong><%=@one_ledpanel.poweramp110%> AMP<br>
-                         <strong> Power AMP 220 V: </strong><%=@one_ledpanel.poweramp220%> AMP<br>
-                         
-                       </li>  
-                  
-                </ul>
       
          </div>
           
