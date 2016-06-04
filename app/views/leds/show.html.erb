@@ -62,9 +62,12 @@
                 <li>
                     <a href="/leds/update">UPDATE LED Panel</a>
                 </li>
-
+                 <li>
+                    <t>________________________________</t>
+                </li>
                 <li>
-                    <a href="/leds/<%=@one_ledpanel.id%>">DELETE LED Panel</a>
+                    <a href="/leds/<%=@one_ledpanel.id%>" data-confirm="Are you sure you want a DELETE this LED Panel?" data-method="DELETE">DELETE LED Panel</a>
+                   
                 </li>
                 
                 <li>
