@@ -56,7 +56,7 @@ class LedsController < ApplicationController
             render "update"
           end
       else
-       	    render "edit"
+       	    edit()
       end
 		
 	end
