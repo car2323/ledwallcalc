@@ -27,12 +27,15 @@ class LedsController < ApplicationController
 	end
     def destroy
         @one_ledpanel = Led.find_by(id: params[:id])
-        # if @one_ledpanel.nil?
-        #     render "informations"
-        #     return
-        # end
+        if @one_ledpanel.nil?
+            render "informations"
+            return
+        end
 		@one_ledpanel.destroy
            redirect_to "/informations"
                
+	end
+    def  edit
+	  @one_ledpanel = Led.find_by(id: params[:id])
 	end
 end
