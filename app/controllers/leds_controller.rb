@@ -4,8 +4,14 @@ class LedsController < ApplicationController
 		@my_led = Led.new
 		render "new"
 	end
+
+	def show 
+       @one_ledpanel = Led.find_by(id: params[:id])
+
+    end
+		
+
 	def create		
-		puts "paso por aqui %%%%%%%%%%%%%%%%%%%%%%%%"
 		@my_ledpanel=Led.new(
 			:user_id => current_user.id,
 			:model => params[:led][:model],
