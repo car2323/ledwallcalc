@@ -10,15 +10,16 @@ Rails.application.routes.draw do
   get 'informations' => 'informations#index'
 
   resources :users do
-      resources :leds
-      resources :screens
+      resources :leds 
   end
+
   resources :leds do
       resources :bumpers
   end
+  resources :users do
+      resources :screens
+  end
   
-
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

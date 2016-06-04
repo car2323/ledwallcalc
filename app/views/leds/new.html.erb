@@ -1,0 +1,36 @@
+<h1>Add new LED PANEL</h1>
+<%= form_for [@my_led] do |f|%>
+	 <%= f.label :model%>
+	 <%= f.text_field :model%>
+
+	 <%= f.label :brand%>
+	 <%= f.text_field :brand%>
+
+	 <%= f.label :Panel_Size_With%>
+	 <%= f.number_field :panelsize_w%>
+
+	 <%= f.label :Panel_Size_Heith%>
+	 <%= f.number_field :panelsize_h%>
+
+     <%= f.label :Panel_Weight%>
+	 <%= f.number_field :panelweight%>
+
+
+
+
+
+    <%= f.label :Pixel_Matrix_With%>
+	 <%= f.number_field :pixelmatrix_w%>
+
+	 <%= f.label :Pixel_Matrix_Heith%>
+	 <%= f.number_field :pixelmatrix_h%>
+
+     <%= f.label :Power_amp_110_V%>
+	 <%= f.number_field :poweramp110%>
+
+     <%= f.label :Power_amp_220_V%>
+	 <%= f.number_field :poweramp220%>
+
+
+	 <%= f.button "Add new", class:"btn btn-primary"%>
+<%end%>
