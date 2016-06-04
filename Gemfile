@@ -36,6 +36,11 @@ gem 'bootstrap-social-rails'
 
 #add 05/31/2016
 
+#add 06/04/2016
+
+gem 'thin'
+
+#add 06/04/2016
 
 
 # Use ActiveModel has_secure_password

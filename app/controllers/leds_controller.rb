@@ -10,7 +10,8 @@ class LedsController < ApplicationController
 
     end
 		
-	def create		
+	def create	
+	    puts "&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&"	
 		@my_ledpanel=Led.new(
 			:user_id => current_user.id,
 			:model => params[:led][:model],

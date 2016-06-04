@@ -96,29 +96,30 @@
 				 <%= f.text_field :brand, class: "form-control"%>
 
 				 <%= f.label :Panel_Size_Width%> : <!--:step => 0.01,-->
-				 <%= f.number_field :panelsize_w,  class: "form-control"%>
+				 <%= f.number_field :panelsize_w, :step => "any",  class: "form-control"%>
 
 				 <%= f.label :Panel_Size_Heigth%> :
-				 <%= f.number_field :panelsize_h,  class: "form-control"%>
+				 <%= f.number_field :panelsize_h, :step => "any", class: "form-control"%>
 
 			     <%= f.label :Panel_Weight%> :
-				 <%= f.number_field :panelweight,  class: "form-control"%>
+				 <%= f.number_field :panelweight, :step => "any", class: "form-control"%>
 
 			    <%= f.label :Pixel_Matrix_Width%> :
-				 <%= f.number_field :pixelmatrix_w,  class: "form-control"%>
+				 <%= f.number_field :pixelmatrix_w, :step => "any", class: "form-control"%>
 
 				 <%= f.label :Pixel_Matrix_Heigth%> :
-				 <%= f.number_field :pixelmatrix_h,  class: "form-control"%>
+				 <%= f.number_field :pixelmatrix_h, :step => "any", class: "form-control"%>
 
 			     <%= f.label :Power_amp_110_V%> :
-				 <%= f.number_field :poweramp110,  class: "form-control"%>
+				 <%= f.number_field :poweramp110, :step => "any", class: "form-control"%>
 
 			     <%= f.label :Power_amp_220_V%> :
-				 <%= f.number_field :poweramp220,  class: "form-control"%>
+				 <%= f.number_field :poweramp220, :step => "any", class: "form-control"%>
+				 <%= f.button "Add new", class:"btn btn-primary"%>
 
             </div>  
                  <br>
-				 <%= f.button "Add new", class:"btn btn-primary"%>
+				 
 				 <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Sidebar Menu</a>
              <%end%>
           
