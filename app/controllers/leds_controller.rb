@@ -10,7 +10,6 @@ class LedsController < ApplicationController
 
     end
 		
-
 	def create		
 		@my_ledpanel=Led.new(
 			:user_id => current_user.id,
@@ -25,5 +24,15 @@ class LedsController < ApplicationController
 			:poweramp220 => params[:led][:poweramp220])
 		@my_ledpanel.save
 		redirect_to "/informations"
+	end
+    def destroy
+        @one_ledpanel = Led.find_by(id: params[:id])
+        # if @one_ledpanel.nil?
+        #     render "informations"
+        #     return
+        # end
+		@one_ledpanel.destroy
+           redirect_to "/informations"
+               
 	end
 end
