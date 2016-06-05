@@ -60,31 +60,19 @@
                 </li>
 
                 <li>
-                    <a href="/leds/<%=@one_ledpanel.id%>" data-method="PUT">UPDATE LED Panel</a>
+                    <a href="/screens/<%=@one_screen.id%>" data-method="PUT">UPDATE Screen</a>
                 </li>
                  <li>
                     <t>________________________________</t>
                 </li>
                 <li>
-                    <a href="/leds/<%=@one_ledpanel.id%>" data-confirm="Are you sure you want a DELETE this LED Panel?" data-method="DELETE">DELETE LED Panel</a>
-                   
-                </li>
-                <li>
-                    <t>________________________________</t>
-                </li>
-
-                <li>
-             
-                    <a href="/leds/<%=@one_ledpanel.id%>/bumpers/new" data-method="GET">Add new Bumper</a>
+                    <a href="/screens/<%=@one_screen.id%>" data-confirm="Are you sure you want a DELETE this Screen?" data-method="DELETE">DELETE Screen</a>
                    
                 </li>
                 
                 <li>
                     <t>________________________________</t>
                 </li>
-                <li>
-                       
-                   
                 <li>
                     <a href="/informations">Back to MyDashboard</a>
                 </li>
@@ -106,58 +94,18 @@
 
        <div class="row">
          <div class="col-sm-4 ledcolshow">
-             <h3 class="colororange">LED Panel Details</h3>
+             <h3 class="colororange">Screen Details</h3>
              <br>
-                <ul>
-                    
+                <ul>       
                        <li class="letterlistdetails1">
-                         <strong class="colorblue"> Model: </strong><%=@one_ledpanel.model%><br>
+                         <strong class="colorblue"> Aspect Ratio: </strong><%=@one_screen.aspectratio%><br>
                          <br>
-                         <strong class="colorblue"> Brand: </strong><%=@one_ledpanel.brand%><br>
+                         <strong class="colorblue"> Width: </strong><%=@one_screen.width%> inch<br>
                          <br>
-                         <strong class="colorblue"> Panel size Width: </strong><%=@one_ledpanel.panelsize_w%> inch<br>
-                         <br>
-                         <strong class="colorblue"> Panel size Heigth: </strong><%=@one_ledpanel.panelsize_h%> inch<br>
-                         <br>
-                         <strong class="colorblue"> Panel Weight: </strong><%=@one_ledpanel.panelweight%> lbs<br>
-                         <br>
-                         <strong class="colorblue"> Pixel Matrix Width: </strong><%=@one_ledpanel.pixelmatrix_w%> px <br>
-                         <br>
-                         <strong class="colorblue"> Pixel Matrix Heigth: </strong><%=@one_ledpanel.pixelmatrix_h%> px <br>
-                         <br>
-                         <strong class="colorblue"> Power AMP 110 V: </strong><%=@one_ledpanel.poweramp110%> AMP<br>
-                         <br>
-                         <strong class="colorblue"> Power AMP 220 V: </strong><%=@one_ledpanel.poweramp220%> AMP<br>
-                         <br>
-                         
-                       </li>  
-                  
+                         <strong class="colorblue"> Height: </strong><%=@one_screen.height%> inch<br> 
+                       </li>              
                 </ul>
-      
          </div>
-
-         <div class="col-sm-3 bumpercol">
-            
-                <h3><strong class="colororange">Bumpers</strong><h3><p>
-                
-                <ul>
-                  <%if @bumpers.length > 0%>
-                    <% @bumpers.each do |one_bumper|%>
-                       <a href="/bumpers/<%=one_bumper.id%>">
-                       <li class="letterlistdetails1">
-                         <strong> Description: </strong><%=one_bumper.description%><br>
-                         <br>
-                         <strong> Width: </strong><%=one_bumper.weight%><br>
-                         <br>
-                         <strong> Height: </strong><%=one_bumper.height%>
-                       </li>
-                       </a>
-                       <br>
-                       <br>
-                    <%end%>
-                  <%end%>
-                </ul>
-         </div><!-- 2er column-->
           
         </div><!-- 4ta row close-->
 
@@ -191,7 +139,3 @@
 </body>
 
 </html>
-
-
-
-
