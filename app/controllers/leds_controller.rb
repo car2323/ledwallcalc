@@ -7,8 +7,10 @@ class LedsController < ApplicationController
 
 	def show 
        @one_ledpanel = Led.find_by(id: params[:id])
-       @bumpers = Bumper.find_by(led_id: params[:id])
-
+       @bumpers = Bumper.all
+       puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+       puts @bumpers
+       puts "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
     end
 		
 	def create		
