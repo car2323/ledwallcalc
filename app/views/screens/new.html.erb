@@ -87,39 +87,26 @@
 
        <div class="row">
         <div class="col-sm-6 ledcolnew">
-            <h3 class="colorblue">Add new LED Panel</h3>
-            <%= form_for [@my_led] do |f|%>
-		         <%= f.label :model%> :
-				 <%= f.text_field :model, class: "form-control", placeholder: "Model"%>
+            <h3 class="colorblue">Add new Screen</h3>
+            <%= form_for [@one_screen] do |f|%>
 
-				 <%= f.label :brand%> :
-				 <%= f.text_field :brand, class: "form-control",placeholder: "Brand"%>
+
+		         <%= f.label :aspect_ratio%> :
+				 <%= f.select_field :aspectratio, class: "form-control", placeholder: "4:3 or 16:9"%>
+
                
-				 <%= f.label :Panel_Size_Width%> : <!--:step => 0.01,-->
-				 <%= f.number_field :panelsize_w, :step => "any",  class: "form-control", placeholder: "Feet or inches"%>
-			  
+				 <%= f.label :width%> : <!--:step => 0.01,-->
+				 <%= f.number_field :width, :step => "any",  class: "form-control", placeholder: "Feet or inches"%>
 
-				 <%= f.label :Panel_Size_Heigth%> :
-				 <%= f.number_field :panelsize_h, :step => "any", class: "form-control", placeholder: "Feet or inches"%>
 
-			     <%= f.label :Panel_Weight%> :
-				 <%= f.number_field :panelweight, :step => "any", class: "form-control", placeholder: "Lbs"%>
+				 <%= f.label :heigth%> :
+				 <%= f.number_field :height, :step => "any", class: "form-control", placeholder: "Feet or inches"%>
 
-			    <%= f.label :Pixel_Matrix_Width%> :
-				 <%= f.number_field :pixelmatrix_w, :step => "any", class: "form-control", placeholder: "Example: 120"%>
-
-				 <%= f.label :Pixel_Matrix_Heigth%> :
-				 <%= f.number_field :pixelmatrix_h, :step => "any", class: "form-control", placeholder: "Example: 120"%>
-
-			     <%= f.label :Power_amp_110_V%> :
-				 <%= f.number_field :poweramp110, :step => "any", class: "form-control", placeholder: "Example: 1.2"%>
-
-			     <%= f.label :Power_amp_220_V%> :
-				 <%= f.number_field :poweramp220, :step => "any", class: "form-control", placeholder: "Example: 0.8"%><br>
+			      <br>
 				 <%= f.button "Add new", class:"btn btn-primary"%>
                  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Sidebar Menu</a>
             </div>  
-                 <br>
+                
 				 
 				 
              <%end%>

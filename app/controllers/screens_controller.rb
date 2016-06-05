@@ -1,7 +1,7 @@
 class ScreensController < ApplicationController
 	before_action :authenticate_user!
 	def new
-		@my_screen = Screen.new
+		@one_screen = Screen.new
 		render "new"
 	end
 
@@ -11,12 +11,12 @@ class ScreensController < ApplicationController
     end
 		
 	def create		
-		@my_screen=Screen.new(
+		@one_screen=Screen.new(
 			:user_id => current_user.id,
 			:aspectratio => params[:screen][:aspectratio],
 			:width => params[:screen][:width],
 			:height => params[:screen][:height])
-		@my_screen.save
+		@one_screen.save
 		redirect_to "/informations"
 	end
     def destroy
