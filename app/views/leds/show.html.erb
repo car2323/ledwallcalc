@@ -123,6 +123,25 @@
                 </ul>
       
          </div>
+
+         <div class="col-sm-3 bumpercol">
+            
+                <h3><strong class="colororange">Bumpers</strong><h3><p>
+                
+                <ul>
+                  <%if @bumpers.length > 0%>
+                    <% @bumpers.each do |one_bumper|%>
+                       <a href="/leds/<%=one_led.id%>">
+                       <li class="letterlist">
+                         <strong> Descripcion: </strong><%=one_bumpers.descripcion%><br>
+                         <strong> Width: </strong><%=one_bumpers.width%><br>
+                         <strong> Height: </strong><%=one_bumpers.height%>
+                       </li>
+                       </a><br>
+                    <%end%>
+                  <%end%>
+                </ul>
+         </div><!-- 2er column-->
           
         </div><!-- 4ta row close-->
 
