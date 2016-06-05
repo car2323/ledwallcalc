@@ -69,7 +69,32 @@
                     <a href="/leds/<%=@one_ledpanel.id%>" data-confirm="Are you sure you want a DELETE this LED Panel?" data-method="DELETE">DELETE LED Panel</a>
                    
                 </li>
+                <li>
+                    <t>________________________________</t>
+                </li>
+
+                <li>
+             
+                    <a href="/leds/<%=@one_ledpanel.id%>/bumpers/new" data-method="GET">Add new Bumper</a>
+                   
+                </li>
                 
+                <li>
+                    <t>________________________________</t>
+                </li>
+                <li>
+                       
+                    <a href="/leds/<%=@one_ledpanel.id%>/bumpers/<%=@one_bumper.id%>" data-method="PUT">UPDATE Bumper</a>
+                   
+                </li>
+                
+                <li>
+                    <t>________________________________</t>
+                </li>
+                <li>
+                    <a href="/bumpers/<%=@one_bumper.id%>" data-method="PUT">DELETE Bumper</a>
+                   
+                </li>
                 <li>
                     <t>________________________________</t>
                 </li>
@@ -132,7 +157,7 @@
                   <%if @bumpers.length > 0%>
                     <% @bumpers.each do |one_bumper|%>
                        <a href="/bumpers/<%=one_bumper.id%>">
-                       <li class="letterlist">
+                       <li class="letterlistdetails1">
                          <strong> Description: </strong><%=one_bumper.description%><br>
                          <br>
                          <strong> Width: </strong><%=one_bumper.weight%><br>
