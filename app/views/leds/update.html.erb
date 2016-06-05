@@ -87,7 +87,7 @@
 <!--begin formulario new led-->
 
        <div class="row">
-         <div class="col-sm-3 ledcolupdate">
+         <div class="col-sm-6 ledcolupdate">
              <h4 class="colororange">LED Panel UPDATE</h4>
 
               <%= form_for [@one_ledpanel] do |f|%>
@@ -117,11 +117,12 @@
 
                  <%= f.label :Power_amp_220_V%> :
                  <%= f.number_field :poweramp220, :step => "any", class: "form-control"%>
-
-            </div>  
                  <br>
                  <%= f.button "UPDATE", class:"btn btn-warning"%>
                  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Sidebar Menu</a>
+            </div>  
+                 
+                 
              <%end%>
       
          </div>
