@@ -60,13 +60,13 @@
                 </li>
 
                 <li>
-                    <a href="/leds/<%=@one_screen.id%>" data-method="PUT">UPDATE LED Panel</a>
+                    <a href="/screens/<%=@one_screen.id%>" data-method="PUT">UPDATE Screen</a>
                 </li>
                  <li>
                     <t>________________________________</t>
                 </li>
                 <li>
-                    <a href="/leds/<%=@one_screen.id%>" data-confirm="Are you sure you want a DELETE this LED Panel?" data-method="DELETE">DELETE LED Panel</a>
+                    <a href="/screens/<%=@one_screen.id%>" data-confirm="Are you sure you want a DELETE this Screen?" data-method="DELETE">DELETE Screen</a>
                    
                 </li>
                 
@@ -100,9 +100,9 @@
                        <li class="letterlistdetails1">
                          <strong class="colorblue"> Aspect Ratio: </strong><%=@one_screen.aspectratio%><br>
                          <br>
-                         <strong class="colorblue"> Width: </strong><%=@one_screen.width%><br>
+                         <strong class="colorblue"> Width: </strong><%=@one_screen.width%> inch<br>
                          <br>
-                         <strong class="colorblue"> Panel size Width: </strong><%=@one_screen.height%> 
+                         <strong class="colorblue"> Height: </strong><%=@one_screen.height%> inch<br> 
                        </li>              
                 </ul>
          </div>
@@ -139,7 +139,3 @@
 </body>
 
 </html>
-
-
-
-

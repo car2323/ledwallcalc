@@ -60,7 +60,7 @@
                 </li>
 
                 <li>
-                   <a href="/leds/<%=@one_ledpanel.id%>" data-method="PUT">UPDATE LED Panel</a>
+                   <a href="/screens/<%=@one_screen.id%>" data-method="PUT">UPDATE LED Panel</a>
                 </li>
                    
                 
@@ -90,34 +90,21 @@
          <div class="col-sm-6 ledcolupdate">
              <h4 class="colororange">LED Panel UPDATE</h4>
 
-              <%= form_for [@one_ledpanel] do |f|%>
-                 <%= f.label :model%> :
-                 <%= f.text_field :model, class: "form-control"%>
+              <%= form_for [@one_screen] do |f|%>
 
-                 <%= f.label :brand%> :
-                 <%= f.text_field :brand, class: "form-control"%>
 
-                 <%= f.label :Panel_Size_Width%> :
-                 <%= f.number_field :panelsize_w, :step => "any", class: "form-control"%>
+                 <%= f.label :aspect_ratio%> :<br>
+                 <%= f.text_field :aspectratio, :step => "any",  class: "form-control", placeholder: "4:3 or 16:9"%>
+               
+                 <%= f.label :width%> : <!--:step => 0.01,-->
+                 <%= f.number_field :width, :step => "any",  class: "form-control", placeholder: "Feet or inches"%>
 
-                 <%= f.label :Panel_Size_Heigth%> :
-                 <%= f.number_field :panelsize_h, :step => "any", class: "form-control"%>
 
-                 <%= f.label :Panel_Weight%> :
-                 <%= f.number_field :panelweight, :step => "any", class: "form-control"%>
+                 <%= f.label :heigth%> :
+                 <%= f.number_field :height, :step => "any", class: "form-control", placeholder: "Feet or inches"%>
 
-                <%= f.label :Pixel_Matrix_Width%> :
-                 <%= f.number_field :pixelmatrix_w, :step => "any", class: "form-control"%>
-
-                 <%= f.label :Pixel_Matrix_Heigth%> :
-                 <%= f.number_field :pixelmatrix_h, :step => "any", class: "form-control"%>
-
-                 <%= f.label :Power_amp_110_V%> :
-                 <%= f.number_field :poweramp110, :step => "any", class: "form-control"%>
-
-                 <%= f.label :Power_amp_220_V%> :
-                 <%= f.number_field :poweramp220, :step => "any", class: "form-control"%>
                  <br>
+                
                  <%= f.button "UPDATE", class:"btn btn-warning"%>
                  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Sidebar Menu</a>
             </div>  

@@ -34,7 +34,7 @@ class ScreensController < ApplicationController
 	end
     def  update
 	  @one_screen = Screen.find_by(id: params[:id])
-      if params[:led]!= nil
+      if params[:screen]!= nil
 	      if @one_screen.update(
 			:aspectratio => params[:screen][:aspectratio],
 			:width => params[:screen][:width],
