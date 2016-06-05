@@ -2,6 +2,7 @@ class BumpersController < ApplicationController
 	before_action :authenticate_user!
 	def new
 		@my_bumper = Bumper.new
+		@my_led = Led.new
 		render "new"
 	end
 
@@ -12,10 +13,11 @@ class BumpersController < ApplicationController
 		
 	def create	
 		    puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-	        puts params[:bumper][:led_id]
+	        puts params[:bumper]
+	        puts params[:led]
 	        puts "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$"
-	@one_bumper=Bumper.new(
-    
+	     @one_bumper=Bumper.new(
+          
 			:description => params[:bumper][:description],
 			:weight => params[:bumper][:weight],
 			:height => params[:bumper][:height])
