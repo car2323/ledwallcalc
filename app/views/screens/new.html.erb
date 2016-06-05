@@ -91,8 +91,9 @@
             <%= form_for [@one_screen] do |f|%>
 
 
-		         <%= f.label :aspect_ratio%> :
-				 <%= f.select_field :aspectratio, class: "form-control", placeholder: "4:3 or 16:9"%>
+		         <%= f.label :aspect_ratio%> :<br>
+				 <%= f.select :aspectratio, options_for_select([["Select One", ""], "4:3", "16:9", "Other"]),class: 
+                 "form-control"%><br>
 
                
 				 <%= f.label :width%> : <!--:step => 0.01,-->
