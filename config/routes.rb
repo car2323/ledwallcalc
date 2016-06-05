@@ -17,6 +17,7 @@ Rails.application.routes.draw do
       resources :bumpers
   end
   resources :screens
+  resources :bumpers
   resources :users do
       resources :screens
   end
