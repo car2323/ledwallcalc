@@ -90,19 +90,22 @@
             <h3 class="colorblue">Add new Bumper</h3>
             <%= form_for [@my_bumper] do |f|%>
 
-		         <%= f.label :Description%> :<br>
-                 <%= f.text_field :description,  class: "form-control", placeholder: "Description"%>
-			
-				 <%= f.label :weight%> : <!--:step => 0.01,-->
-				 <%= f.number_field :weight, :step => "any",  class: "form-control", placeholder: "Lbs"%>
+              
 
-				 <%= f.label :heigth%> :
-				 <%= f.number_field :height, :step => "any", class: "form-control", placeholder: "Feet or inches"%>
+		      <%= f.label :Description%> :<br>
+              <%= f.text_field :description,  class: "form-control", placeholder: "Description"%>
+			
+			  <%= f.label :weight%> : <!--:step => 0.01,-->
+			  <%= f.number_field :weight, :step => "any",  class: "form-control", placeholder: "Lbs"%>
+
+			  <%= f.label :heigth%> :
+			  <%= f.number_field :height, :step => "any", class: "form-control", placeholder: "Feet or inches"%>
 
 			     <br>
 				 <%= f.button "Add new", class: "btn btn-primary"%>
                  <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Sidebar Menu</a>
         </div>   
+
              <%end%>
           
         </div><!-- 4ta row close-->
