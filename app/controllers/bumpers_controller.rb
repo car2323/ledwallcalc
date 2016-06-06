@@ -2,6 +2,9 @@ class BumpersController < ApplicationController
 	before_action :authenticate_user!
 	def new
 		@my_bumper = Bumper.new
+		
+		$led_idparams = params[:led_id]
+		
 		render "new"
 	end
 
@@ -12,7 +15,7 @@ class BumpersController < ApplicationController
 		
 	def create	
 	        @one_bumper=Bumper.new(
-            :led_id => params[:bumper][:id],
+            :led_id => $led_idparams,
  			:description => params[:bumper][:description],
 			:weight => params[:bumper][:weight],
 			:height => params[:bumper][:height])
