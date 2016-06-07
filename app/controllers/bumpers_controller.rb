@@ -10,7 +10,8 @@ class BumpersController < ApplicationController
 
 	def show 
        @one_bumper = Bumper.find_by(id: params[:id])
-      
+       @one_led_id = $led_idparams
+
     end
 		
 	def create	
