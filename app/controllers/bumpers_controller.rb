@@ -27,10 +27,13 @@ class BumpersController < ApplicationController
     
 	end
 	def edit
-     @one_bumper = Bumper.find_by(id: params[:id])
+	   @one_led_id = $led_idparams
+       @one_bumper = Bumper.find_by(id: params[:id])
+
 	end
     def  update
-	  @one_bumper = bumper.find_by(id: params[:id])
+      @one_led_id = $led_idparams
+	  @one_bumper = Bumper.find_by(id: params[:id])
       if params[:bumper]!= nil
 	      if @one_bumper.update(
 				:description => params[:bumper][:description],
@@ -44,6 +47,5 @@ class BumpersController < ApplicationController
        	    edit()
       end
 		
-	end
 	end
 end
