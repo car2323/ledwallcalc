@@ -24,7 +24,14 @@ class BumpersController < ApplicationController
 		redirect_to "/informations"
 	end
     def destroy
-    
+     @one_bumper = Bumper.find_by(id: params[:id])
+        if @one_bumper.nil?
+            render "informations"
+            return
+        end
+		@one_bumper.destroy
+           redirect_to "/informations"
+               
 	end
 	def edit
 	   @one_led_id = $led_idparams
