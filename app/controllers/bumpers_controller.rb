@@ -28,11 +28,17 @@ class BumpersController < ApplicationController
 	end
 	def edit
 	   @one_led_id = $led_idparams
+	   puts"%%%%%%%%%%%%%%%%%%%%%edit%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+       puts @one_led_id
+       puts"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
        @one_bumper = Bumper.find_by(id: params[:id])
 
 	end
     def  update
       @one_led_id = $led_idparams
+      puts"%%%%%%%%%%%%%%%%%%%%%update%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+      puts @one_led_id
+      puts"%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
 	  @one_bumper = Bumper.find_by(id: params[:id])
       if params[:bumper]!= nil
 	      if @one_bumper.update(
