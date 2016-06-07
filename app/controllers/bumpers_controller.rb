@@ -30,6 +30,20 @@ class BumpersController < ApplicationController
      @one_bumper = Bumper.find_by(id: params[:id])
 	end
     def  update
-	  
+	  @one_bumper = bumper.find_by(id: params[:id])
+      if params[:bumper]!= nil
+	      if @one_bumper.update(
+				:description => params[:bumper][:description],
+				:weight => params[:bumper][:weight],
+				:height => params[:bumper][:height])
+	            redirect_to "/informations"
+	      else
+            render "update"
+          end
+      else
+       	    edit()
+      end
+		
+	end
 	end
 end
