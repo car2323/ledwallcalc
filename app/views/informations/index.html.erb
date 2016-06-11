@@ -151,22 +151,22 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="gridModalLabel">Modal tefvervevferfvefritle</h4>
+        <h4 class="modal-title" id="gridModalLabel">Modal</h4>
       </div>
       <div class="modal-body">
         <div class="container-fluid bd-example-row">
           <div class="row">
             <div class="col-md-4">.col-md-4
                kjhefvelfvlwejnvoweifjcnoeijfcnwoijfcnowijfcneoifjnc
-<ul>
+                <ul>
                   <%if @screens.length > 0%>
                     <% @screens.each do |one_screen|%>
                        <a href="/screens/<%=one_screen.id%>">
-                       <li class="letterlist">
+                        <li class="letterlist">
                          <strong> Aspect Ratio: </strong><%=one_screen.aspectratio%><br>
                          <strong> Width: </strong><%=one_screen.width%> 
                          <strong> Height: </strong><%=one_screen.height%>
-                       </li>
+                        </li>
                        </a><br>
                     <%end%>
                   <%end%>
