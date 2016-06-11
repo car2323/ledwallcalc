@@ -1,0 +1,2 @@
+class LedApiController < ApplicationController
+end
