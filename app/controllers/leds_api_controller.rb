@@ -12,5 +12,5 @@ class LedApiController < ApplicationController
  #        end
 	#  	render json: one_equipment
 	#  	# status 201 --> Created  (cree el recurso que querias crear)
-	# end
+	 end
 end
