@@ -131,7 +131,31 @@
                   <%end%>
                 </ul>
              </div><!-- 2da column--> 
+
+
+
+             <div class="col-sm-4 resultcol">
             
+                 <h3><strong class="colororange">Screens</strong><h3><p>
+                 
+                <ul>
+                  <%if @screens.length > 0%>
+                    <% @screens.each do |one_screen|%>
+                       <a href="/screens/<%=one_screen.id%>">
+                       <li class="letterlist">
+                         <strong> Aspect Ratio: </strong><%=one_screen.aspectratio%><br>
+                         <strong> Width: </strong><%=one_screen.width%> 
+                         <strong> Height: </strong><%=one_screen.height%>
+                       </li>
+                       </a><br>
+                    <%end%>
+                  <%end%>
+                </ul>
+             </div><!-- 3ra column--> 
+
+
+
+
         </div><!-- 4ta row close-->
 <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Sidebar Menu</a>
 <!--end list with all led wall-->
