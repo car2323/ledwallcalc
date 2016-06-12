@@ -2,6 +2,7 @@ $(document).on("page:load ready", function () {
      $(".js-calculate").on("click", function (event) {
        event.preventDefault();
        $(".level1led").empty();
+       $(".level2screen").empty();
        $(".modal").modal("show");
     
        $(".js-ledlist").on("click", function (event) {
