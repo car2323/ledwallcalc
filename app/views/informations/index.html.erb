@@ -181,10 +181,10 @@
                   <%if @screens.length > 0%>
                     <% @screens.each do |one_screen|%>
                        <a href="#">
-                        <li class="letterlist js-screenlist" data-screenwidth="<%=one_screen.width%>">
+                        <li class="letterlist js-screenlist" data-screenwidth="<%=one_screen.width%>" data-screenheight="<%=one_screen.height%>">
                          <strong> Aspect Ratio: </strong><%=one_screen.aspectratio%><br>
                          <strong> Width: </strong><%=one_screen.width%> 
-                         <strong data-screenheight="<%=one_screen.height%>"> Height: </strong><%=one_screen.height%>
+                         <strong> Height: </strong><%=one_screen.height%>
                         </li>
                        </a><br>
                     <%end%>
@@ -206,16 +206,11 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-9">
-              Level 1: .col-sm-9
-              <div class="row">
-                <div class="col-xs-8 col-sm-6">
-                  Level 2: .col-xs-8 .col-sm-6
-                </div>
-                <div class="col-xs-4 col-sm-6">
-                  Level 2: .col-xs-4 .col-sm-6
-                </div>
-              </div>
+            <div class="col-sm-9 level1led">
+              
+            </div>
+            <div class="col-sm-9 level2screen">
+              
             </div>
           </div>
         </div>
