@@ -23,7 +23,17 @@ $(document).on("page:load ready", function () {
                  $(".level2screen").append(screen_width);
                  $(".level2screen").append(" x ");
                  $(".level2screen").append(screen_height);
-
+                 $(".js-calculatebtn").on("click", function (){
+                      var resultvalid = select_validations();
+                      if (resultvalid === false)
+                      {
+                          alert("hola tonto");
+                      }
+                      else
+                      {
+                          alert("paso bien");
+                      }
+                 });
              });
 
        });

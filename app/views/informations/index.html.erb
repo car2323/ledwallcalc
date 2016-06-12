@@ -136,7 +136,7 @@
 
              <div class="col-sm-4 resultcol">
             
-                 <h3><strong class="colororange">Screens</strong><h3><p>
+                 <h3><strong class="colorblue">Calculation Result</strong><h3><p>
                  
                 <ul>
                   <%if @screens.length > 0%>
@@ -188,7 +188,7 @@
                   <%if @leds.length > 0%>
                     <% @leds.each do |one_led|%>
                        <a href="#">
-                       <li class="letterlist js-ledlist" data-ledmodel="<%=one_led.model%>">
+                       <li class="letterlist js-ledlist" data-ledmodel="<%=one_led.model%>" data-ledid="<%=one_led.id%>">
                          <strong> Model: </strong><%=one_led.model%><br>
                          <strong> Brand: </strong><%=one_led.brand%>
                        </li>
@@ -205,7 +205,7 @@
                   <%if @screens.length > 0%>
                     <% @screens.each do |one_screen|%>
                        <a href="#">
-                        <li class="letterlist js-screenlist" data-screenwidth="<%=one_screen.width%>" data-screenheight="<%=one_screen.height%>">
+                        <li class="letterlist js-screenlist" data-screenwidth="<%=one_screen.width%>" data-screenheight="<%=one_screen.height%>" data-screeid="<%=one_screen.id%>">
                          <strong> Aspect Ratio: </strong><%=one_screen.aspectratio%><br>
                          <strong> Width: </strong><%=one_screen.width%> 
                          <strong> Height: </strong><%=one_screen.height%>
@@ -241,7 +241,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Calculate</button>
+        <button type="button" class="btn btn-primary js-calculatebtn">Calculate</button>
       </div>
     </div>
   </div>
