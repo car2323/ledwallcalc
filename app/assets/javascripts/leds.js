@@ -9,6 +9,7 @@ $(document).on("page:load ready", function () {
              
              var led_model_list = $(event.currentTarget);
              var led_model = led_model_list.data("ledmodel");
+             $(".level1led").append("<strong class='colorblue'>LED Panel: </strong>");
              $(".level1led").append(led_model);
              $(".js-screenlist").on("click", function (event) {
                  $(".level2screen").empty();
@@ -17,8 +18,7 @@ $(document).on("page:load ready", function () {
 
                  var screen_height_list = $(event.currentTarget);
                  var screen_height = screen_height_list.data("screenheight");
-                  console.log(screen_height);
-                 $(".level2screen").append("<br>");
+                 $(".level2screen").append("<strong class='colorblue'>Screen: </strong>");
                  $(".level2screen").append(screen_width);
                  $(".level2screen").append(" x ");
                  $(".level2screen").append(screen_height);
