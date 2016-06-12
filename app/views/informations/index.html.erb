@@ -163,8 +163,8 @@
                 <ul>
                   <%if @leds.length > 0%>
                     <% @leds.each do |one_led|%>
-                       <a href="/leds/<%=one_led.id%>">
-                       <li class="letterlist">
+                       <a href="#">
+                       <li class="letterlist js-ledlist" data-lediid="<%=one_led.id%>">
                          <strong> Model: </strong><%=one_led.model%><br>
                          <strong> Brand: </strong><%=one_led.brand%>
                        </li>
@@ -180,8 +180,8 @@
                 <ul>
                   <%if @screens.length > 0%>
                     <% @screens.each do |one_screen|%>
-                       <a href="/screens/<%=one_screen.id%>">
-                        <li class="letterlist">
+                       <a href="#">
+                        <li class="letterlist js-screenlist" data-screenid="<%=one_screen.id%>">
                          <strong> Aspect Ratio: </strong><%=one_screen.aspectratio%><br>
                          <strong> Width: </strong><%=one_screen.width%> 
                          <strong> Height: </strong><%=one_screen.height%>
@@ -227,11 +227,7 @@
     </div>
   </div>
 </div>
-<div class="bd-example bd-example-padded-bottom">
-  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#gridSystemModal">
-    Launch demo modal
-  </button>
-</div>
+
 
 
 
