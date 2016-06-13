@@ -1,6 +1,5 @@
 class LedApiController < ApplicationController
 	def index
-
  #        one_equipment = Equipment.find(params[:id])
  #        if one_equipment.user_id != current_user.id
  #            redirect_to "/"
