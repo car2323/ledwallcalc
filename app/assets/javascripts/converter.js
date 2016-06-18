@@ -9,7 +9,7 @@ $(document).on("page:load ready", function () {
 	     $(".modal").modal("show");
 	     $(".js-convert").on("click",function (event){
              var feet_number = $(".js-feetnumber").val();
-             var inches_number = (feet_number * 12);
+             var inches_number = (feet_number * 12).toFixed(2);
              $(".js-inchesnumber").val(inches_number);
          });
      });
@@ -24,7 +24,7 @@ $(document).on("page:load ready", function () {
 	     $(".modal").modal("show");
 	     $(".js-convert").on("click",function (event){
              var kilo_number = $(".js-kilo").val();
-             var lbs_number = (kilo_number * 2.204);
+             var lbs_number = (kilo_number * 2.204).toFixed(3);
              $(".js-lbs").val(lbs_number);
          });
      });
