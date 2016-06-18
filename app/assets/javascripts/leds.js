@@ -41,20 +41,9 @@ $(document).on("page:load ready", function () {
                       }
                       else
                       { 
-                           var string_url= "/leds/"+led_id;
-                           $.ajax({     
-                                  url: string_url,
-                                  success: function (oneled_panel){
-                                     console.log("Success");
-                                  },
-                                  error:function (oneled_panel) {
-                                      console.log("It failed. :( ");
-                                      console.log(theError.responseJSON);
-                                  }
-
-                            });
-                        //conectarme con ajax, 
-                          alert("paso bien");
+                           
+                           $(".js-elementslist").append("<li>" +  + "</li>");
+                           $(".modal").modal("hide");
                       }
                  });
              });
