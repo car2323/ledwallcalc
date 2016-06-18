@@ -97,13 +97,13 @@
                  <%= f.label :brand%> :
                  <%= f.text_field :brand, class: "form-control"%>
 
-                 <%= f.label :Panel_Size_Width%> :
+                 <%= f.label :Panel_Size_Width%> : <a href="#" class="js-converter">converter</a>
                  <%= f.number_field :panelsize_w, :step => "any", class: "form-control"%>
 
-                 <%= f.label :Panel_Size_Heigth%> :
+                 <%= f.label :Panel_Size_Heigth%> : <a href="#" class="js-converter">converter</a>
                  <%= f.number_field :panelsize_h, :step => "any", class: "form-control"%>
 
-                 <%= f.label :Panel_Weight%> :
+                 <%= f.label :Panel_Weight%> : <a href="#" class="js-converter2">converter</a>
                  <%= f.number_field :panelweight, :step => "any", class: "form-control"%>
 
                 <%= f.label :Pixel_Matrix_Width%> :
@@ -140,6 +140,27 @@
         <!-- /#page-content-wrapper -->
 
     </div>
+
+
+    <!--Modal modal modal converter units-->
+   <div class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title"></h4>
+      </div>
+      <div class="modal-body">
+        
+      </div>
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary js-convert">convert</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
     <!-- /#wrapper -->
 
     <!-- jQuery -->

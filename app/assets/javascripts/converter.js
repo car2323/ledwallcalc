@@ -1,5 +1,7 @@
 $(document).on("page:load ready", function () {
+	
      $(".js-converter").on("click", function (event) {
+     
 	     $(".modal-title").empty();
 	     $(".modal-body").empty();
 	     $(".modal-title").append("<h3 class='colororange'>Converter Units</h3>");
@@ -15,6 +17,7 @@ $(document).on("page:load ready", function () {
      });
 
      $(".js-converter2").on("click", function (event) {
+     	
 	     $(".modal-title").empty();
 	     $(".modal-body").empty();
 	     $(".modal-title").append("<h3 class='colororange'>Converter Units</h3>");
