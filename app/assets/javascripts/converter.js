@@ -13,5 +13,20 @@ $(document).on("page:load ready", function () {
              $(".js-inchesnumber").val(inches_number);
          });
      });
+
+     $(".js-converter2").on("click", function (event) {
+	     $(".modal-title").empty();
+	     $(".modal-body").empty();
+	     $(".modal-title").append("<h3 class='colororange'>Converter Units</h3>");
+	     $(".modal-body").append("<input onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 44 || event.charCode === 46' class='form-control js-kilo' placeholder='Kilograms'></input>");
+	     $(".modal-body").append("<h3>TO:</h3>");
+	     $(".modal-body").append("<input disabled='true' onkeypress='return event.charCode >= 48 && event.charCode <= 57 || event.charCode === 44 || event.charCode === 46' class='form-control js-lbs' placeholder='Lbs'></input>");
+	     $(".modal").modal("show");
+	     $(".js-convert").on("click",function (event){
+             var kilo_number = $(".js-kilo").val();
+             var lbs_number = (kilo_number * 2.204);
+             $(".js-lbs").val(lbs_number);
+         });
+     });
 });
   
