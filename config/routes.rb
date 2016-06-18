@@ -9,9 +9,9 @@ Rails.application.routes.draw do
 
   get 'informations' => 'informations#index'
 
-  scope "/api" do
-    resources :leds, controller: "led_api"
-  end
+  # scope "/api" do
+  #   resources :leds, controller: "led_api"
+  # end
 
   resources :users do
       resources :leds 
