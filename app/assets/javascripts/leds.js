@@ -3,10 +3,12 @@ $(document).on("page:load ready", function () {
        event.preventDefault();
        $(".level1led").empty();
        $(".level2screen").empty();
+       $(".js-elementslist").empty();
        $(".modal").modal("show");
     
        $(".js-ledlist").on("click", function (event) {
              $(".level1led").empty();
+             $(".js-elementslist").empty();
              
              var led_model_list = $(event.currentTarget);
              var led_model = led_model_list.data("ledmodel");
@@ -18,6 +20,7 @@ $(document).on("page:load ready", function () {
              $(".level1led").append(led_model);
              $(".js-screenlist").on("click", function (event) {
                  $(".level2screen").empty();
+                 $(".js-elementslist").empty();
 
                  var screen_width_list = $(event.currentTarget);
                  var screen_width = screen_width_list.data("screenwidth");
@@ -63,31 +66,47 @@ $(document).on("page:load ready", function () {
 });
 
 function getledwall(oneled_panel,screen_width,screen_height){
+       $(".js-elementslist").empty();
+       var panels_permitw = (screen_width / oneled_panel.panelsize_w).toFixed(2);
+       panels_permitw = Math.round(panels_permitw);
 
+       var panels_permith = (screen_height / oneled_panel.panelsize_h).toFixed(2);
+       panels_permith = Math.round(panels_permith);
 
+       var total_weigth = (oneled_panel.panelweight)*(panels_permith * panels_permitw);
 
-       $(".js-elementslist").append("<li>" +oneled_panel.model+"</li>");
+       var total_poweramp = ((oneled_panel.poweramp110) * (panels_permith * panels_permitw)).toFixed(2);
+       total_poweramp = Math.round(total_poweramp);
 
+       var total_20amp = (total_poweramp / 20);
+       total_20amp = Math.round(total_20amp);
+
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:  "+oneled_panel.model+"</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Width: "+panels_permitw+" panels</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Heigth: "+panels_permith+" panels</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +total_weigth+"</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +total_poweramp+"</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +total_20amp+"</li>");
        $(".modal").modal("hide");                   
 }
 
 
-                        // <strong class="colorblue"> Model: </strong><%=@one_ledpanel.model%><br>
-                        //  <br>
-                        //  <strong class="colorblue"> Brand: </strong><%=@one_ledpanel.brand%><br>
-                        //  <br>
-                        //  <strong class="colorblue"> Panel size Width: </strong><%=@one_ledpanel.panelsize_w%> inch<br>
-                        //  <br>
-                        //  <strong class="colorblue"> Panel size Heigth: </strong><%=@one_ledpanel.panelsize_h%> inch<br>
-                        //  <br>
-                        //  <strong class="colorblue"> Panel Weight: </strong><%=@one_ledpanel.panelweight%> lbs<br>
-                        //  <br>
-                        //  <strong class="colorblue"> Pixel Matrix Width: </strong><%=@one_ledpanel.pixelmatrix_w%> px <br>
-                        //  <br>
-                        //  <strong class="colorblue"> Pixel Matrix Heigth: </strong><%=@one_ledpanel.pixelmatrix_h%> px <br>
-                        //  <br>
-                        //  <strong class="colorblue"> Power AMP 110 V: </strong><%=@one_ledpanel.poweramp110%> AMP<br>
-                        //  <br>
-                        //  <strong class="colorblue"> Power AMP 220 V: </strong><%=@one_ledpanel.poweramp220%> AMP<br>
-                        //  <br>
-                         
+        // <strong class="colorblue"> Model: </strong><%=@one_ledpanel.model%><br>
+        //  <br>
+        //  <strong class="colorblue"> Brand: </strong><%=@one_ledpanel.brand%><br>
+        //  <br>
+        //  <strong class="colorblue"> Panel size Width: </strong><%=@one_ledpanel.panelsize_w%> inch<br>
+        //  <br>
+        //  <strong class="colorblue"> Panel size Heigth: </strong><%=@one_ledpanel.panelsize_h%> inch<br>
+        //  <br>
+        //  <strong class="colorblue"> Panel Weight: </strong><%=@one_ledpanel.panelweight%> lbs<br>
+        //  <br>
+        //  <strong class="colorblue"> Pixel Matrix Width: </strong><%=@one_ledpanel.pixelmatrix_w%> px <br>
+        //  <br>
+        //  <strong class="colorblue"> Pixel Matrix Heigth: </strong><%=@one_ledpanel.pixelmatrix_h%> px <br>
+        //  <br>
+        //  <strong class="colorblue"> Power AMP 110 V: </strong><%=@one_ledpanel.poweramp110%> AMP<br>
+        //  <br>
+        //  <strong class="colorblue"> Power AMP 220 V: </strong><%=@one_ledpanel.poweramp220%> AMP<br>
+        //  <br>
+         
