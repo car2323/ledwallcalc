@@ -41,9 +41,22 @@ $(document).on("page:load ready", function () {
                       }
                       else
                       { 
-                           
-                           $(".js-elementslist").append("<li>" +  + "</li>");
+                           var string_url= "/api/leds/"+led_id;
+                           $.ajax({     
+                                  url: string_url,
+                                  success: function (oneled_panel){
+                                     console.log("Success");
+
+                                  },
+                                  error:function (oneled_panel) {
+                                      console.log("It failed. :( ");
+                                      console.log(theError.responseJSON);
+                                  }
+                            });
+                           $(".js-elementslist").append("<li>" + "testing</li>");
                            $(".modal").modal("hide");
+                        //conectarme con ajax, 
+                          alert("paso bien");
                       }
                  });
              });
@@ -51,3 +64,4 @@ $(document).on("page:load ready", function () {
        });       
   });
 });
+

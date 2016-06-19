@@ -9,9 +9,7 @@ Rails.application.routes.draw do
 
   get 'informations' => 'informations#index'
 
-  # scope "/api" do
-  #   resources :leds, controller: "led_api"
-  # end
+  
 
   resources :users do
       resources :leds 
@@ -26,7 +24,10 @@ Rails.application.routes.draw do
   resources :users do
       resources :screens
   end
-  
+
+   scope "/api" do
+    resources :leds, controller: "led_api"
+   end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
