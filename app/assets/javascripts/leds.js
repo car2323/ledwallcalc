@@ -67,6 +67,7 @@ $(document).on("page:load ready", function () {
 
 function getledwall(oneled_panel,screen_width,screen_height){
        $(".js-elementslist").empty();
+       console.log (oneled_panel);
        var panels_permitw = (screen_width / oneled_panel.panelsize_w).toFixed(2);
        panels_permitw = Math.round(panels_permitw);
 
@@ -82,14 +83,14 @@ function getledwall(oneled_panel,screen_width,screen_height){
 
        var total_20amp = (total_poweramp / 20);
  
-       total_20amp = Math.ceil(total_20amp);
+       total_20amp = Math.ceil(total_20amp + 1);
 
        var total_poweramp220 = ((oneled_panel.poweramp220) * (panels_permith * panels_permitw)).toFixed(2);
        total_poweramp220 = Math.round(total_poweramp220);
 
        var total_20amp220 = (total_poweramp220 / 20);
     
-       total_20amp220 = Math.ceil(total_20amp220);
+       total_20amp220 = Math.ceil(total_20amp220 + 1);
 
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<t class='colorred'>"+oneled_panel.model+"</t></li>");
