@@ -1,6 +1,7 @@
 class BumperApiController < ApplicationController
 	def show
-        all_bumpers = Bumper.find_by(led_id: params[:id])
+		
+        all_bumpers = Bumper.where(led_id: params[:id])
         if all_bumpers.nil?
             return
         end
