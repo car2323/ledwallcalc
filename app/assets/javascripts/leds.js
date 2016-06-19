@@ -82,7 +82,7 @@ $(document).on("page:load ready", function () {
 
 function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        $(".js-elementslist").empty();
-       console.log (all_bumpers);
+
        var panels_permitw = (screen_width / oneled_panel.panelsize_w).toFixed(2);
        panels_permitw = Math.floor(panels_permitw);
 
@@ -108,7 +108,9 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        var diference_w = ((oneled_panel.panelsize_w * panels_permitw)-(screen_width)).toFixed(2);
        var diference_h = ((oneled_panel.panelsize_w * panels_permith)-(screen_height)).toFixed(2);
 
-       //var all_usebumpers = tengo que selecionar el bumper mas largo a ver cuantos de esos necesito y despues los pequenos  
+       var reallonger_wall_w = ((screen_width)-(oneled_panel.panelsize_w * panels_permitw)).toFixed(2);
+       var reallonger_wall_h = ((screen_height)-(oneled_panel.panelsize_h * panels_permith)).toFixed(2)
+       
 
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<t class='colorred'>"+oneled_panel.model+"</t></li>");
@@ -127,9 +129,20 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 220V:  "+"<t class='colorred'>"+total_poweramp220+" </t>amp</li>");
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 220V:  "+"<t class='colorred'>"+total_20amp220+"</t></li>");
-       $(".modal").modal("hide");                   
-}
+       getbumper(all_bumpers,reallonger_wall_w,reallonger_wall_h);
 
+
+       $(".modal").modal("hide");                   
+};
+function getbumper(all_bumpers,reallonger_wall_w,reallonger_wall_h){
+
+   if (all_bumpers.length > 1){
+    alert("You have registered more than 2 bumpers for this LED panel, The app, only using does 2 first at the data base");
+   }
+   else{
+
+   }
+};
 
         // <strong class="colorblue"> Model: </strong><%=@one_ledpanel.model%><br>
         //  <br>
