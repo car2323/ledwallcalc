@@ -109,7 +109,7 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        var diference_h = ((oneled_panel.panelsize_w * panels_permith)-(screen_height)).toFixed(2);
 
        var reallonger_wall_w = ((screen_width)-(oneled_panel.panelsize_w * panels_permitw)).toFixed(2);
-       var reallonger_wall_h = ((screen_height)-(oneled_panel.panelsize_h * panels_permith)).toFixed(2)
+
        
 
 
@@ -129,17 +129,21 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 220V:  "+"<t class='colorred'>"+total_poweramp220+" </t>amp</li>");
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 220V:  "+"<t class='colorred'>"+total_20amp220+"</t></li>");
-       getbumper(all_bumpers,reallonger_wall_w,reallonger_wall_h);
+       getbumper(all_bumpers,reallonger_wall_w);
 
 
        $(".modal").modal("hide");                   
 };
-function getbumper(all_bumpers,reallonger_wall_w,reallonger_wall_h){
-
-   if (all_bumpers.length > 1){
+function getbumper(all_bumpers,reallonger_wall_w){
+   console.log (reallonger_wall_w);
+   if (all_bumpers.length > 2){
     alert("You have registered more than 2 bumpers for this LED panel, The app, only using does 2 first at the data base");
    }
    else{
+       if (all_bumpers[0].height > all_bumpers[1].height){
+           var number_bumperslong = (reallonger_wall_w / all_bumpers[0].height);
+           $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 220V:  "+"<t class='colorred'>"+number_bumperslong+"</t></li>");
+       }
 
    }
 };
