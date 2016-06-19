@@ -73,6 +73,8 @@ function getledwall(oneled_panel,screen_width,screen_height){
        var panels_permith = (screen_height / oneled_panel.panelsize_h).toFixed(2);
        panels_permith = Math.round(panels_permith);
 
+       var totalpanels_permit = (panels_permith * panels_permitw);
+
        var total_weigth = (oneled_panel.panelweight)*(panels_permith * panels_permitw);
 
        var total_poweramp = ((oneled_panel.poweramp110) * (panels_permith * panels_permitw)).toFixed(2);
@@ -81,12 +83,13 @@ function getledwall(oneled_panel,screen_width,screen_height){
        var total_20amp = (total_poweramp / 20);
        total_20amp = Math.round(total_20amp);
 
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:  "+oneled_panel.model+"</li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Width: "+panels_permitw+" panels</li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Heigth: "+panels_permith+" panels</li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +total_weigth+"</li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +total_poweramp+"</li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +total_20amp+"</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<t class='colorred'>"+oneled_panel.model+"</t></li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Width:  "+"<t class='colorred'>"+panels_permitw+" </t>panels</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Heigth:  "+"<t class='colorred'>"+panels_permith+" </t>panels</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total LED panels:  "+"<t class='colorred'>"+totalpanels_permit+"</t></li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight:  "+"<t class='colorred'>"+total_weigth+" </t>Lbs</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming:  "+"<t class='colorred'>"+total_poweramp+" </t>amp</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp:  "+"<t class='colorred'>"+total_20amp+"</t></li>");
        $(".modal").modal("hide");                   
 }
 
