@@ -105,8 +105,8 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        var total_20amp220 = (total_poweramp220 / 20);
        total_20amp220 = Math.ceil(total_20amp220 + 1);
 
-       var diference_w = ((oneled_panel.panelsize_w * panels_permitw)-(screen_width));
-       //var diference_y = ();
+       var diference_w = ((oneled_panel.panelsize_w * panels_permitw)-(screen_width)).toFixed(2);
+       var diference_h = ((oneled_panel.panelsize_w * panels_permith)-(screen_height)).toFixed(2);
 
        //var all_usebumpers = tengo que selecionar el bumper mas largo a ver cuantos de esos necesito y despues los pequenos  
 
@@ -115,9 +115,11 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Width:  "+"<t class='colorred'>"+panels_permitw+" </t>panels</li>");
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Heigth:  "+"<t class='colorred'>"+panels_permith+" </t>panels</li>");
 
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Diference with original Width size:  "+"<t class='colorred'>"+diference_w+" </t>inches</li>");
-
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total LED panels:  "+"<t class='colorred'>"+totalpanels_permit+"</t></li>");
+
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Diference original Width size:  "+"<t class='colorred'>"+diference_w+" </t>inch</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Diference original Heigth size:  "+"<t class='colorred'>"+diference_h+" </t>inch</li>");
+       
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight:  "+"<t class='colorred'>"+total_weigth+" </t>Lbs</li>");
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 110V:  "+"<t class='colorred'>"+total_poweramp+" </t>amp</li>");
