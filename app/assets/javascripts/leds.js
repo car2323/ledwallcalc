@@ -49,7 +49,22 @@ $(document).on("page:load ready", function () {
                                   url: string_url,
                                   success: function (oneled_panel){
                                      console.log("Success");
-                                     getledwall(oneled_panel,screen_width,screen_height);
+
+
+                                  var string_url2= "/api/bumpers/"+led_id;
+                                  $.ajax({     
+                                      url: string_url2,
+                                      success: function (all_bumpers){
+                                         console.log("Success");
+                                         getledwall(oneled_panel,screen_width,screen_height,all_bumpers);
+                                         
+                                      },
+                                      error:function (all_bumpers) {
+                                          console.log("It failed. :( ");
+                                          console.log(theError.responseJSON);
+                                      }
+                                  });
+                                     
                                   },
                                   error:function (oneled_panel) {
                                       console.log("It failed. :( ");
@@ -65,9 +80,9 @@ $(document).on("page:load ready", function () {
   });
 });
 
-function getledwall(oneled_panel,screen_width,screen_height){
+function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        $(".js-elementslist").empty();
-       console.log (oneled_panel);
+       console.log (all_bumpers);
        var panels_permitw = (screen_width / oneled_panel.panelsize_w).toFixed(2);
        panels_permitw = Math.round(panels_permitw);
 
