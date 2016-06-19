@@ -86,8 +86,6 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        var panels_permitw = (screen_width / oneled_panel.panelsize_w).toFixed(2);
        panels_permitw = Math.floor(panels_permitw);
 
-       var allbumpers = 
-
        var panels_permith = (screen_height / oneled_panel.panelsize_h).toFixed(2);
        panels_permith = Math.floor(panels_permith);
 
@@ -108,6 +106,8 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        var total_20amp220 = (total_poweramp220 / 20);
     
        total_20amp220 = Math.ceil(total_20amp220 + 1);
+
+       //var all_usebumpers = tengo que selecionar el bumper mas largo a ver cuantos de esos necesito y despues los pequenos  
 
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<t class='colorred'>"+oneled_panel.model+"</t></li>");
