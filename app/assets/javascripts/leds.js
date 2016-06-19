@@ -81,13 +81,15 @@ function getledwall(oneled_panel,screen_width,screen_height){
        total_poweramp = Math.round(total_poweramp);
 
        var total_20amp = (total_poweramp / 20);
-       total_20amp = Math.round(total_20amp);
+ 
+       total_20amp = Math.ceil(total_20amp);
 
        var total_poweramp220 = ((oneled_panel.poweramp220) * (panels_permith * panels_permitw)).toFixed(2);
        total_poweramp220 = Math.round(total_poweramp220);
 
        var total_20amp220 = (total_poweramp220 / 20);
-       total_20amp220 = Math.round(total_20amp220);
+    
+       total_20amp220 = Math.ceil(total_20amp220);
 
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<t class='colorred'>"+oneled_panel.model+"</t></li>");
@@ -97,10 +99,10 @@ function getledwall(oneled_panel,screen_width,screen_height){
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight:  "+"<t class='colorred'>"+total_weigth+" </t>Lbs</li>");
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 110V:  "+"<t class='colorred'>"+total_poweramp+" </t>amp</li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp:  "+"<t class='colorred'>"+total_20amp+"</t></li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 110V:  "+"<t class='colorred'>"+total_20amp+"</t></li>");
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 220V:  "+"<t class='colorred'>"+total_poweramp220+" </t>amp</li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp:  "+"<t class='colorred'>"+total_20amp220+"</t></li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 220V:  "+"<t class='colorred'>"+total_20amp220+"</t></li>");
        $(".modal").modal("hide");                   
 }
 
