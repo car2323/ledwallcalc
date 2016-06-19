@@ -46,17 +46,14 @@ $(document).on("page:load ready", function () {
                                   url: string_url,
                                   success: function (oneled_panel){
                                      console.log("Success");
-
+                                     getledwall(oneled_panel,screen_width,screen_height);
                                   },
                                   error:function (oneled_panel) {
                                       console.log("It failed. :( ");
                                       console.log(theError.responseJSON);
                                   }
                             });
-                           $(".js-elementslist").append("<li>" + "testing</li>");
-                           $(".modal").modal("hide");
-                        //conectarme con ajax, 
-                          alert("paso bien");
+                           
                       }
                  });
              });
@@ -65,3 +62,32 @@ $(document).on("page:load ready", function () {
   });
 });
 
+function getledwall(oneled_panel,screen_width,screen_height){
+
+
+
+       $(".js-elementslist").append("<li>" +oneled_panel.model+"</li>");
+
+       $(".modal").modal("hide");                   
+}
+
+
+                        // <strong class="colorblue"> Model: </strong><%=@one_ledpanel.model%><br>
+                        //  <br>
+                        //  <strong class="colorblue"> Brand: </strong><%=@one_ledpanel.brand%><br>
+                        //  <br>
+                        //  <strong class="colorblue"> Panel size Width: </strong><%=@one_ledpanel.panelsize_w%> inch<br>
+                        //  <br>
+                        //  <strong class="colorblue"> Panel size Heigth: </strong><%=@one_ledpanel.panelsize_h%> inch<br>
+                        //  <br>
+                        //  <strong class="colorblue"> Panel Weight: </strong><%=@one_ledpanel.panelweight%> lbs<br>
+                        //  <br>
+                        //  <strong class="colorblue"> Pixel Matrix Width: </strong><%=@one_ledpanel.pixelmatrix_w%> px <br>
+                        //  <br>
+                        //  <strong class="colorblue"> Pixel Matrix Heigth: </strong><%=@one_ledpanel.pixelmatrix_h%> px <br>
+                        //  <br>
+                        //  <strong class="colorblue"> Power AMP 110 V: </strong><%=@one_ledpanel.poweramp110%> AMP<br>
+                        //  <br>
+                        //  <strong class="colorblue"> Power AMP 220 V: </strong><%=@one_ledpanel.poweramp220%> AMP<br>
+                        //  <br>
+                         
