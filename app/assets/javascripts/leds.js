@@ -83,12 +83,13 @@ $(document).on("page:load ready", function () {
 function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        $(".js-elementslist").empty();
        console.log (all_bumpers);
-       console.log (all_bumpers);
        var panels_permitw = (screen_width / oneled_panel.panelsize_w).toFixed(2);
-       panels_permitw = Math.round(panels_permitw);
+       panels_permitw = Math.floor(panels_permitw);
+
+       var allbumpers = 
 
        var panels_permith = (screen_height / oneled_panel.panelsize_h).toFixed(2);
-       panels_permith = Math.round(panels_permith);
+       panels_permith = Math.floor(panels_permith);
 
        var totalpanels_permit = (panels_permith * panels_permitw);
 
