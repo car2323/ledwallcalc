@@ -145,11 +145,14 @@ function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
   } 
   else
   {
-   if (all_bumpers.length > 2)
+   if (all_bumpers.length >= 2)
    {
-    console.log(all_bumpers.length);
-    alert("You have registered more than 2 bumpers for this LED panel, The app, only using does 2 first at the data base");
-   }
+    if(all_bumpers.length > 2) 
+    {
+       console.log(all_bumpers.length);
+       alert("You have registered more than 2 bumpers for this LED panel, The app, only using does 2 first at the data base");
+    }  
+   
    
 
     if (all_bumpers.length === 2)
@@ -197,7 +200,7 @@ function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
                 
              }
           }
-        }
+      }  }
     }
     if (all_bumpers.length === 1)
     {
