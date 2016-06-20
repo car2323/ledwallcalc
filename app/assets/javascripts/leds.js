@@ -135,19 +135,19 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        $(".modal").modal("hide");                   
 };
 function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
-  if (!all_bumpers)
+
+  if (all_bumpers.length=== 0)
   {
-     alert("for a more completed info, add bumpers fos this LED panel");
+     alert("for a more complete info, add bumpers fos this LED panel");
   } 
   else
   {
-
    if (all_bumpers.length > 2)
    {
+    console.log(all_bumpers.length);
     alert("You have registered more than 2 bumpers for this LED panel, The app, only using does 2 first at the data base");
    }
-   else
-   {
+   
        if (all_bumpers[0].height >= all_bumpers[1].height)
        {
            var number_bumperslong = (reallonger_wall_w / all_bumpers[0].height);
@@ -191,26 +191,8 @@ function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
              }
           }
         }
-    }
+    
   }
 };
 
-        // <strong class="colorblue"> Model: </strong><%=@one_ledpanel.model%><br>
-        //  <br>
-        //  <strong class="colorblue"> Brand: </strong><%=@one_ledpanel.brand%><br>
-        //  <br>
-        //  <strong class="colorblue"> Panel size Width: </strong><%=@one_ledpanel.panelsize_w%> inch<br>
-        //  <br>
-        //  <strong class="colorblue"> Panel size Heigth: </strong><%=@one_ledpanel.panelsize_h%> inch<br>
-        //  <br>
-        //  <strong class="colorblue"> Panel Weight: </strong><%=@one_ledpanel.panelweight%> lbs<br>
-        //  <br>
-        //  <strong class="colorblue"> Pixel Matrix Width: </strong><%=@one_ledpanel.pixelmatrix_w%> px <br>
-        //  <br>
-        //  <strong class="colorblue"> Pixel Matrix Heigth: </strong><%=@one_ledpanel.pixelmatrix_h%> px <br>
-        //  <br>
-        //  <strong class="colorblue"> Power AMP 110 V: </strong><%=@one_ledpanel.poweramp110%> AMP<br>
-        //  <br>
-        //  <strong class="colorblue"> Power AMP 220 V: </strong><%=@one_ledpanel.poweramp220%> AMP<br>
-        //  <br>
-         
+ 
