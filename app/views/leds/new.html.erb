@@ -96,14 +96,14 @@
 				 <%= f.label :brand%> :
 				 <%= f.text_field :brand, class: "form-control",placeholder: "Brand"%>
                
-				 <%= f.label :Panel_Size_Width%> : <a href="#" class="js-converter">converter</a><!--:step => 0.01,-->
-				 <%= f.number_field :panelsize_w, :step => "any",  class: "form-control", placeholder: "Inches"%>
+				 <%= f.label :Panel_Size_Width%> : <a href="#" class="js-converterpanelsizew">converter</a><!--:step => 0.01,-->
+				 <%= f.number_field :panelsize_w, :step => "any",  class: "form-control js-panelsizew", placeholder: "Inches"%>
 			  
 
-				 <%= f.label :Panel_Size_Heigth%> : <a href="#" class="js-converter">converter</a>
-				 <%= f.number_field :panelsize_h, :step => "any", class: "form-control", placeholder: " Inches"%>
+				 <%= f.label :Panel_Size_Heigth%> : <a href="#" class="js-converterpanelsizeh">converter</a>
+				 <%= f.number_field :panelsize_h, :step => "any", class: "form-control js-panelsizeh", placeholder: " Inches"%>
 
-			     <%= f.label :Panel_Weight%> : <a href="#" class="js-converter2">converter</a>
+			     <%= f.label :Panel_Weight%> : <a href="#" class="js-converterpanelw2">converter</a>
 				 <%= f.number_field :panelweight, :step => "any", class: "form-control", placeholder: "Lbs"%>
 
 			    <%= f.label :Pixel_Matrix_Width%> :
@@ -151,8 +151,9 @@
         
       </div>
       <div class="modal-footer">
-
         <button type="button" class="btn btn-primary js-convert">convert</button>
+        <button type="button" class="btn btn-warning js-apply">Apply</button>
+
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
