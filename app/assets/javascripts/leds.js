@@ -80,6 +80,11 @@ $(document).on("page:load ready", function () {
   });
 });
 
+
+
+
+
+
 function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        $(".js-elementslist").empty();
 
@@ -137,6 +142,11 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
 
        $(".modal").modal("hide");                   
 };
+
+
+
+
+
 function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
 
   if (all_bumpers.length=== 0)
@@ -159,6 +169,7 @@ function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
            {
                   number_bumperslong = Math.floor(number_bumperslong);
                   $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[0].description +" "+"<t class='colorred'>"+number_bumperslong+"</t></li>");
+                  total_weigth = (total_weigth + (all_bumpers[0].weight * number_bumperslong));
                   $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<t class='colorred'>"+total_weigth+" </t>Lbs</li>");
            }
            else
@@ -182,6 +193,7 @@ function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
              {
                   number_bumperslong = Math.floor(number_bumperslong);
                   $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[0].description +" "+"<t class='colorred'>"+number_bumperslong+"</t></li>");
+                  total_weigth = (total_weigth + (all_bumpers[1].weight * number_bumperslong));
                   $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<t class='colorred'>"+total_weigth+" </t>Lbs</li>");
              }
              else
@@ -205,6 +217,7 @@ function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
            {
                   number_bumperslong = Math.floor(number_bumperslong);
                   $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[0].description +" "+"<t class='colorred'>"+number_bumperslong+"</t></li>");
+                  total_weigth = (total_weigth + (all_bumpers[0].weight * number_bumperslong));
                   $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<t class='colorred'>"+total_weigth+" </t>Lbs</li>");
            }
            else
