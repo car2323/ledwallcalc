@@ -122,7 +122,7 @@
                     <% @screens.each do |one_screen|%>
                        <a href="/screens/<%=one_screen.id%>">
                        <li class="letterlist">
-                         <strong> Aspect Ratio: </strong><%=one_screen.aspectratio%><br>
+                         <strong> Description: </strong><%=one_screen.aspectratio%><br>
                          <strong> Width: </strong><%=one_screen.width%> 
                          <strong> Height: </strong><%=one_screen.height%>
                        </li>
@@ -196,7 +196,7 @@
                     <% @screens.each do |one_screen|%>
                        <a href="#">
                         <li class="letterlist js-screenlist" data-screenwidth="<%=one_screen.width%>" data-screenheight="<%=one_screen.height%>" data-screenid="<%=one_screen.id%>">
-                         <strong> Aspect Ratio: </strong><%=one_screen.aspectratio%><br>
+                         <strong> Description: </strong><%=one_screen.aspectratio%><br>
                          <strong> Width: </strong><%=one_screen.width%> 
                          <strong> Height: </strong><%=one_screen.height%>
                         </li>
