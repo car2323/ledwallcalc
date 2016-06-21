@@ -97,14 +97,19 @@
                  <%= f.label :brand%> :
                  <%= f.text_field :brand, class: "form-control"%>
 
-                 <%= f.label :Panel_Size_Width%> : <a href="#" class="js-converter">converter</a>
-                 <%= f.number_field :panelsize_w, :step => "any", class: "form-control"%>
+                 
+                 
+                  <%= f.label :Panel_Size_Width%> : <a href="#" class="js-converterpanelsizew">converter</a><!--:step => 0.01,-->
+                 <%= f.number_field :panelsize_w, :step => "any",  class: "form-control js-panelsizew", placeholder: "Inches"%>
+              
 
-                 <%= f.label :Panel_Size_Heigth%> : <a href="#" class="js-converter">converter</a>
-                 <%= f.number_field :panelsize_h, :step => "any", class: "form-control"%>
+                 <%= f.label :Panel_Size_Heigth%> : <a href="#" class="js-convertpanelsizeh">converter</a>
+                 <%= f.number_field :panelsize_h, :step => "any", class: "form-control js-ledpanelsizeh", placeholder: " Inches"%>
 
-                 <%= f.label :Panel_Weight%> : <a href="#" class="js-converter2">converter</a>
-                 <%= f.number_field :panelweight, :step => "any", class: "form-control"%>
+                 <%= f.label :Panel_Weight%> : <a href="#" class="js-converterpanelw2">converter</a>
+                 <%= f.number_field :panelweight, :step => "any", class: "form-control js-weightpanel", placeholder: "Lbs"%>
+
+
 
                 <%= f.label :Pixel_Matrix_Width%> :
                  <%= f.number_field :pixelmatrix_w, :step => "any", class: "form-control"%>
