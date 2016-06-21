@@ -96,12 +96,12 @@
 			
 
                
-				 <%= f.label :width%> : <a href="#" class="js-converter">converter</a><!--:step => 0.01,-->
-				 <%= f.number_field :width, :step => "any",  class: "form-control", placeholder: "Inches"%>
+				 <%= f.label :width%> : <a href="#" class="js-converterscreenw">converter</a><!--:step => 0.01,-->
+				 <%= f.number_field :width, :step => "any",  class: "form-control js-screenw", placeholder: "Inches"%>
 
 
-				 <%= f.label :heigth%> : <a href="#" class="js-converter">converter</a>
-				 <%= f.number_field :height, :step => "any", class: "form-control", placeholder: "Inches"%>
+				 <%= f.label :heigth%> : <a href="#" class="js-converterscreenh">converter</a>
+				 <%= f.number_field :height, :step => "any", class: "form-control js-screenh", placeholder: "Inches"%>
 
 			      <br>
 				 <%= f.button "Add new", class:"btn btn-primary"%>
@@ -138,7 +138,7 @@
       </div>
       <div class="modal-footer">
 
-        <button type="button" class="btn btn-primary js-convert">convert</button>
+  
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
