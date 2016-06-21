@@ -96,12 +96,12 @@
                  <%= f.label :description%> : <br>
                  <%= f.text_field :aspectratio, :step => "any",  class: "form-control", placeholder: "Example: 7'5 x 10  aspect ratio 4:3 or 16:9"%>
                
-                 <%= f.label :width%> : <a href="#" class="js-converter">converter</a><!--:step => 0.01,-->
-                 <%= f.number_field :width, :step => "any",  class: "form-control", placeholder: "Inches"%>
+                 <%= f.label :width%> : <a href="#" class="js-converterscreenw">converter</a><!--:step => 0.01,-->
+                 <%= f.number_field :width, :step => "any",  class: "form-control js-screenw", placeholder: "Inches"%>
 
 
-                 <%= f.label :heigth%> : <a href="#" class="js-converter">converter</a>
-                 <%= f.number_field :height, :step => "any", class: "form-control", placeholder: "Inches"%>
+                 <%= f.label :heigth%> : <a href="#" class="js-converterscreenh">converter</a>
+                 <%= f.number_field :height, :step => "any", class: "form-control js-screenh", placeholder: "Inches"%>
 
                  <br>
                 
