@@ -120,7 +120,10 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
 
        var reallonger_wall_w = (oneled_panel.panelsize_w * panels_permitw).toFixed(2);
 
-       
+       var totalpixel_w = (oneled_panel.pixelmatrix_w * panels_permitw);
+       var totalpixel_h = (oneled_panel.pixelmatrix_h * panels_permith);
+
+       var aspectratio = (panels_permitw / panels_permith).toFixed(2); 
 
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<strong><t class='colorred'>"+oneled_panel.model+"</t></strong></li>");
@@ -145,6 +148,9 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
 
        getbumper(all_bumpers,reallonger_wall_w,total_weigth);
 
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Resolution LED wall:  "+"<strong><t class='colorred'>"+totalpixel_w+"</t></strong>w  X  "+"<strong><t class='colorred'>"+totalpixel_h+"</t></strong>h pixels</li>");
+
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Aspect Ratio:  "+"<strong><t class='colorred'>"+aspectratio+" </t></strong></li>");
 
        $(".modal").modal("hide");                   
 };
