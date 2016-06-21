@@ -111,7 +111,10 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        total_20amp220 = Math.ceil(total_20amp220 + 1);
 
        var diference_w = ((oneled_panel.panelsize_w * panels_permitw)-(screen_width)).toFixed(2);
-       var diference_h = ((oneled_panel.panelsize_w * panels_permith)-(screen_height)).toFixed(2);
+       var diference_h = ((oneled_panel.panelsize_h * panels_permith)-(screen_height)).toFixed(2);
+
+       var actual_w = (oneled_panel.panelsize_w * panels_permitw).toFixed(2);
+       var actual_h = (oneled_panel.panelsize_h * panels_permith).toFixed(2);
 
        var reallonger_wall_w = (oneled_panel.panelsize_w * panels_permitw).toFixed(2);
 
@@ -125,11 +128,10 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total LED panels:  "+"<t class='colorred'>"+totalpanels_permit+"</t></li>");
 
 
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Diference original Width size:  "+"<t class='colorred'>"+diference_w+" </t>inch</li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Diference original Heigth size:  "+"<t class='colorred'>"+diference_h+" </t>inch</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Width size:  "+"<t class='colorred'>"+actual_w+" </t>inch or "+"<t class='colorred'>"+(actual_w/12).toFixed(2)+"</t>"+" feet </li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Heigth size:  "+"<t class='colorred'>"+actual_h+" </t>inch or "+"<t class='colorred'>"+(actual_h/12).toFixed(2)+"</t>"+" feet </li>");
        
       
-
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 110V:  "+"<t class='colorred'>"+total_poweramp+" </t>amp</li>");
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 110V:  "+"<t class='colorred'>"+total_20amp+"</t></li>");
 
@@ -137,6 +139,8 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 220V:  "+"<t class='colorred'>"+total_20amp220+"</t></li>");
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight without bumpers:  "+"<t class='colorred'>"+total_weigth+" </t>Lbs</li>");
+
+       
        getbumper(all_bumpers,reallonger_wall_w,total_weigth);
 
 
