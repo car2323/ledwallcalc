@@ -128,8 +128,8 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total LED panels:  "+"<t class='colorred'>"+totalpanels_permit+"</t></li>");
 
 
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Width size:  "+"<t class='colorred'>"+actual_w+" </t>inch or "+"<t class='colorred'>"+(actual_w/12).toFixed(2)+"</t>"+" feet </li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Heigth size:  "+"<t class='colorred'>"+actual_h+" </t>inch or "+"<t class='colorred'>"+(actual_h/12).toFixed(2)+"</t>"+" feet </li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Width size:  "+"<t class='colorred'>"+actual_w+" </t>inch or "+"<t class='colorred'>"+(actual_w/12).toFixed(2)+"</t>"+" feet  diff. "+"<t class='colorred'>"+diference_w+"</t></li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Heigth size:  "+"<t class='colorred'>"+actual_h+" </t>inch or "+"<t class='colorred'>"+(actual_h/12).toFixed(2)+"</t>"+" feet diff. "+"<t class='colorred'>"+diference_h+"</t></li>");
        
       
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 110V:  "+"<t class='colorred'>"+total_poweramp+" </t>amp</li>");
@@ -140,7 +140,7 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight without bumpers:  "+"<t class='colorred'>"+total_weigth+" </t>Lbs</li>");
 
-       
+
        getbumper(all_bumpers,reallonger_wall_w,total_weigth);
 
 
