@@ -37,7 +37,7 @@ $(document).on("page:load ready", function () {
                  $(".level2screen").append(" x ");
                  $(".level2screen").append(screen_height);
                  $(".js-calculatebtn").on("click", function (event){
-      
+
                       var resultvalid = select_validations();
                       if (resultvalid === false)
                       {
@@ -130,12 +130,12 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<strong><t class='colorred'>"+oneled_panel.model+"</t></strong></li>");
 
        $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Width: </t>"+"<strong><input class='form-inline colorred form-control' id='js-panels_w' type='number' value='"+panels_permitw+"'></input></strong>");
-       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Heigth: </t>"+"<strong><input class='form-inline colorred form-control js-panels_h' type='number' value='"+panels_permith+"'></input></strong><br>");
+       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Heigth: </t>"+"<strong><input class='form-inline colorred form-control' id='js-panels_h' type='number' value='"+panels_permith+"'></input></strong><br>");
 
        //$(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Width:  "+"<strong><t class='colorred'>"+panels_permitw+" </t></strong>panels</li>");
        //$(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Heigth:  "+"<strong><t class='colorred'>"+panels_permith+" </t></strong>panels</li>");
 
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total LED panels:  "+"<strong><t class='colorred'>"+totalpanels_permit+"</t></strong></li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total LED panels:  "+"<strong><t class='colorred' id='totalpanels_permit'>"+totalpanels_permit+"</t></strong></li>");
 
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Width size:  "+"<strong><t class='colorred'>"+actual_w+" </t></strong>inch or "+"<strong><t class='colorred'>"+(actual_w/12).toFixed(2)+"</t></strong>"+" feet  diff. "+"<strong><t class='colorred'>"+diference_w+"</t></strong> inch</li>");
