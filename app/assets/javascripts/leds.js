@@ -157,7 +157,13 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Aspect Ratio:  "+"<strong><t class='colorred'>"+aspectratio+" </t></strong></li>");
 
-       $(".modal").modal("hide");                   
+       $(".modal").modal("hide");   
+
+       $(".js-updateresultcol").on("click", function(){
+
+              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers);
+     });
+
 };
 
 

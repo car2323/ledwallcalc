@@ -1,19 +1,178 @@
-$(document).on("page:load ready", function () {
+function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers) {
 
 
      $(".js-updateresultcol").on("click", function(){
 
-     	var original_panels_w = $("#js-panels_w").val();
-        var original_panels_h = $("#js-panels_h").val();
-     	console.log(original_panels_w);
-     	console.log(original_panels_h);
-        var totalpanels_permit = (original_panels_w * original_panels_h);
-        console.log(totalpanels_permit);
-        console.log($("#totalpanels_permit").val());  
+     	
        
-
-
      });
-
      
 });
+
+function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
+       $(".js-elementslist").empty();
+
+       var panels_permitw = (screen_width / oneled_panel.panelsize_w).toFixed(2);
+       panels_permitw = Math.floor(panels_permitw);
+
+       var panels_permith = (screen_height / oneled_panel.panelsize_h).toFixed(2);
+       panels_permith = Math.floor(panels_permith);
+
+       var totalpanels_permit = (panels_permith * panels_permitw);
+
+       var total_weigth = ((oneled_panel.panelweight)*(panels_permith * panels_permitw));
+       var total_weigth1 = total_weigth;
+       total_weigth1 = total_weigth1.toFixed(2);
+
+       var total_poweramp = ((oneled_panel.poweramp110) * (panels_permith * panels_permitw)).toFixed(2);
+       total_poweramp = Math.round(total_poweramp);
+
+       var total_20amp = (total_poweramp / 20);
+       total_20amp = Math.ceil(total_20amp + 1);
+
+       var total_poweramp220 = ((oneled_panel.poweramp220) * (panels_permith * panels_permitw)).toFixed(2);
+       total_poweramp220 = Math.round(total_poweramp220);
+
+       var total_20amp220 = (total_poweramp220 / 20);
+       total_20amp220 = Math.ceil(total_20amp220 + 1);
+
+       var diference_w = ((oneled_panel.panelsize_w * panels_permitw)-(screen_width)).toFixed(2);
+       var diference_h = ((oneled_panel.panelsize_h * panels_permith)-(screen_height)).toFixed(2);
+
+       var actual_w = (oneled_panel.panelsize_w * panels_permitw).toFixed(2);
+       var actual_h = (oneled_panel.panelsize_h * panels_permith).toFixed(2);
+
+       var reallonger_wall_w = (oneled_panel.panelsize_w * panels_permitw).toFixed(2);
+
+       var totalpixel_w = (oneled_panel.pixelmatrix_w * panels_permitw);
+       var totalpixel_h = (oneled_panel.pixelmatrix_h * panels_permith);
+
+       var aspectratio = (panels_permitw / panels_permith).toFixed(2); 
+
+
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<strong><t class='colorred'>"+oneled_panel.model+"</t></strong></li>");
+
+       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Width: </t>"+"<strong><input class='form-inline colorred form-control' id='js-panels_w' type='number' value='"+panels_permitw+"'></input></strong>");
+       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Heigth: </t>"+"<strong><input class='form-inline colorred form-control' id='js-panels_h' type='number' value='"+panels_permith+"'></input></strong><br>");
+
+       //$(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Width:  "+"<strong><t class='colorred'>"+panels_permitw+" </t></strong>panels</li>");
+       //$(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Heigth:  "+"<strong><t class='colorred'>"+panels_permith+" </t></strong>panels</li>");
+
+       //$(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total LED panels:  "+"<strong><t class='colorred' id='totalpanels_permit'>"+totalpanels_permit+"</t></strong></li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total LED panels:  "+"<strong><t class='colorred' id='totalpanels_permit'>"+totalpanels_permit+"</t></strong></li>");
+
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Width size:  "+"<strong><t class='colorred'>"+actual_w+" </t></strong>inch or "+"<strong><t class='colorred'>"+(actual_w/12).toFixed(2)+"</t></strong>"+" feet  diff. "+"<strong><t class='colorred'>"+diference_w+"</t></strong> inch</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Heigth size:  "+"<strong><t class='colorred'>"+actual_h+" </t></strong>inch or "+"<strong><t class='colorred'>"+(actual_h/12).toFixed(2)+"</t></strong>"+" feet diff. "+"<strong><t class='colorred'>"+diference_h+"</t></strong> inch</li>");
+       
+      
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 110V:  "+"<strong><t class='colorred'>"+total_poweramp+" </t></strong>amp</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 110V:  "+"<strong><t class='colorred'>"+total_20amp+"</t></strong></li>");
+
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 220V:  "+"<strong><t class='colorred'>"+total_poweramp220+" </t></strong>amp</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 220V:  "+"<strong><t class='colorred'>"+total_20amp220+"</t></strong></li>");
+
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight without bumpers:  "+"<strong><t class='colorred'>"+total_weigth1+" </t></strong>Lbs</li>");
+
+
+       getbumper(all_bumpers,reallonger_wall_w,total_weigth);
+
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Resolution LED wall:  "+"<strong><t class='colorred'>"+totalpixel_w+"</t></strong>w  X  "+"<strong><t class='colorred'>"+totalpixel_h+"</t></strong>h pixels</li>");
+
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Aspect Ratio:  "+"<strong><t class='colorred'>"+aspectratio+" </t></strong></li>");
+
+       $(".modal").modal("hide");                   
+};
+
+
+
+
+
+function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
+
+  if (all_bumpers.length=== 0)
+  {
+     alert("for a more complete info, add bumpers fos this LED panel");
+  } 
+  else
+  {
+   if (all_bumpers.length >= 2)
+   {
+    if(all_bumpers.length > 2) 
+    {
+       alert("You have registered more than 2 bumpers for this LED panel, The app, only using does 2 first at the data base");
+    }  
+       if (all_bumpers[0].height >= all_bumpers[1].height)
+       {
+           var number_bumperslong = (reallonger_wall_w / all_bumpers[0].height);
+          
+           if ((number_bumperslong % 1 ) === 0)
+           {
+                  number_bumperslong = Math.floor(number_bumperslong);
+                  $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[0].description +" "+"<strong><t class='colorred'>"+number_bumperslong+"</t></strong></li>");
+                  total_weigth = (total_weigth + (all_bumpers[0].weight * number_bumperslong));
+                  $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<strong><t class='colorred'>"+total_weigth+" </t></strong>Lbs</li>");
+           }
+           else
+           {   
+                 number_bumperslong = Math.floor(number_bumperslong);
+                 $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[0].description +" "+"<strong><t class='colorred'>"+number_bumperslong+"</t></strong></li>");
+                 $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[1].description +" "+"<strong><t class='colorred'>"+1+"</t></strong></li>");
+                 total_weigth = (total_weigth + (all_bumpers[0].weight * number_bumperslong)+ all_bumpers[1].weight);
+                 total_weigth = total_weigth.toFixed(2);
+                 $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<strong><t class='colorred'>"+total_weigth+" </t></strong>Lbs</li>");
+                
+           }
+       }
+       else 
+       {
+          if (all_bumpers[1].height >= all_bumpers[0].height)
+          {
+             console.log ("entro por el segundo mayor que el primero");
+             var number_bumperslong = (reallonger_wall_w / all_bumpers[1].height);
+          
+             if ((number_bumperslong % 1 ) === 0)
+             {
+                  number_bumperslong = Math.floor(number_bumperslong);
+                  $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[0].description +" "+"<strong><t class='colorred'>"+number_bumperslong+"</t></strong></li>");
+                  total_weigth = (total_weigth + (all_bumpers[1].weight * number_bumperslong));
+                  total_weigth = total_weigth.toFixed(2);
+                  $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<strong><t class='colorred'>"+total_weigth+" </t></strong>Lbs</li>");
+             }
+             else
+             {   
+                 number_bumperslong = Math.floor(number_bumperslong);
+                 $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[1].description +" "+"<strong><t class='colorred'>"+number_bumperslong+"</t></strong></li>");
+                 $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[0].description +" "+"<strong><t class='colorred'>"+1+"</t></strong></li>");
+                 total_weigth = (total_weigth + (all_bumpers[1].weight * number_bumperslong)+ all_bumpers[0].weight);
+                 total_weigth = total_weigth.toFixed(2);
+                 $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<strong><t class='colorred'>"+total_weigth+" </t></strong>Lbs</li>");
+                
+             }
+          }
+      }  }
+    
+    if (all_bumpers.length === 1)
+    {
+       
+       var number_bumperslong = (reallonger_wall_w / all_bumpers[0].height);
+          
+           if ((number_bumperslong % 1 ) === 0)
+           {
+                  number_bumperslong = Math.floor(number_bumperslong);
+                  $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[0].description +" "+"<strong><t class='colorred'>"+number_bumperslong+"</t></strong></li>");
+                  total_weigth = (total_weigth + (all_bumpers[0].weight * number_bumperslong));
+                  total_weigth = total_weigth.toFixed(2);
+                  $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<strong><t class='colorred'>"+total_weigth+" </t></strong>Lbs</li>");
+           }
+           else
+           {   
+                 number_bumperslong = Math.floor(number_bumperslong);
+                 $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[0].description +" "+"<strong><t class='colorred'>"+number_bumperslong+"</t></strong></li>");
+                 total_weigth = (total_weigth + (all_bumpers[0].weight * number_bumperslong));
+                 total_weigth = total_weigth.toFixed(2);
+                 $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<strong><t class='colorred'>"+total_weigth+" </t></strong>Lbs</li>");
+                
+           }
+    }
+  }
+};
