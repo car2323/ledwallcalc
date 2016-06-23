@@ -1,20 +1,17 @@
-function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers) {
+function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h) {
     
     // console.log(oneled_panel);
     // console.log(screen_width);
     // console.log(screen_height);
     // console.log(all_bumpers);
-    
-    getledwall(oneled_panel,screen_width,screen_height, all_bumpers); 
-};
-
-function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
+        
+      
 	  console.log("entro");
        $(".js-elementslist").empty();
 
-       var panels_permitw = $(".js-panels_w").val();
+       var panels_permitw = new_jspanels_w; 
 
-       var panels_permith = $(".js-panels_h").val();
+       var panels_permith = new_jspanels_h;
 
        var totalpanels_permit = (panels_permith * panels_permitw);
 
@@ -173,4 +170,7 @@ function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
            }
     }
   }
+      $("#js-panels_w").focus(function(){
+                
+      });
 };

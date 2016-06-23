@@ -159,9 +159,12 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
 
        $(".modal").modal("hide");   
 
-       $(".js-updateresultcol").on("click", function(){
 
-              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers);
+       
+       $("#js-panels_w").on("input", function(){
+              var new_jspanels_w = $("#js-panels_w").val();
+              var new_jspanels_h = $("#js-panels_h").val();
+              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
      });
 
 };
