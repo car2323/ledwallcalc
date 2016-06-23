@@ -4,9 +4,9 @@ function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_js
     // console.log(screen_width);
     // console.log(screen_height);
     // console.log(all_bumpers);
-        $( "input[name='focuspanels_w']" ).focus();
+       
       
-	  console.log("entro");
+	     console.log("entro");
        $(".js-elementslist").empty();
 
        var panels_permitw = new_jspanels_w; 
@@ -79,7 +79,8 @@ function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_js
        $("#js-panels_w").on("change", function(){
               var new_jspanels_w = $("#js-panels_w").val();
               var new_jspanels_h = $("#js-panels_h").val();
-              $("#js-panels_w").focus();
+              console.log("segundo llamado");
+              $("#js-panels_w").select();
               change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
      });                
 };
