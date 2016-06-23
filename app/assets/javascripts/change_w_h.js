@@ -4,7 +4,7 @@ function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_js
     // console.log(screen_width);
     // console.log(screen_height);
     // console.log(all_bumpers);
-        
+        $( "input[name='focuspanels_w']" ).focus();
       
 	  console.log("entro");
        $(".js-elementslist").empty();
@@ -75,7 +75,13 @@ function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_js
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Aspect Ratio:  "+"<strong><t class='colorred'>"+aspectratio+" </t></strong></li>");
 
-       $(".modal").modal("hide");                   
+       $(".modal").modal("hide");   
+       $("#js-panels_w").on("change", function(){
+              var new_jspanels_w = $("#js-panels_w").val();
+              var new_jspanels_h = $("#js-panels_h").val();
+              $("#js-panels_w").focus();
+              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
+     });                
 };
 
 
@@ -170,7 +176,5 @@ function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
            }
     }
   }
-      $("#js-panels_w").focus(function(){
-                
-      });
+
 };

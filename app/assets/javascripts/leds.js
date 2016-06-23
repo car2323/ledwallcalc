@@ -129,7 +129,7 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<strong><t class='colorred'>"+oneled_panel.model+"</t></strong></li>");
 
-       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Width: </t>"+"<strong><input class='form-inline colorred form-control' id='js-panels_w' type='number' value='"+panels_permitw+"'></input></strong>");
+       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Width: </t>"+"<strong><input class='form-inline colorred form-control' id='js-panels_w' name='focuspanels_w' type='number' value='"+panels_permitw+"'></input></strong>");
        $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Heigth: </t>"+"<strong><input class='form-inline colorred form-control' id='js-panels_h' type='number' value='"+panels_permith+"'></input></strong><br>");
 
        //$(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Width:  "+"<strong><t class='colorred'>"+panels_permitw+" </t></strong>panels</li>");
@@ -161,9 +161,10 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
 
 
        
-       $("#js-panels_w").on("input", function(){
+       $("#js-panels_w").on("change", function(){
               var new_jspanels_w = $("#js-panels_w").val();
               var new_jspanels_h = $("#js-panels_h").val();
+              
               change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
      });
 
