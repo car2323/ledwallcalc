@@ -1,22 +1,20 @@
 function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers) {
-
-
-     $(".js-updateresultcol").on("click", function(){
-
-     	
-       
-     });
-     
-});
+    
+    // console.log(oneled_panel);
+    // console.log(screen_width);
+    // console.log(screen_height);
+    // console.log(all_bumpers);
+    
+    getledwall(oneled_panel,screen_width,screen_height, all_bumpers); 
+};
 
 function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
+	  console.log("entro");
        $(".js-elementslist").empty();
 
-       var panels_permitw = (screen_width / oneled_panel.panelsize_w).toFixed(2);
-       panels_permitw = Math.floor(panels_permitw);
+       var panels_permitw = $(".js-panels_w").val();
 
-       var panels_permith = (screen_height / oneled_panel.panelsize_h).toFixed(2);
-       panels_permith = Math.floor(panels_permith);
+       var panels_permith = $(".js-panels_h").val();
 
        var totalpanels_permit = (panels_permith * panels_permitw);
 
