@@ -39,3 +39,10 @@ ul{
   overflow-y: auto;
   background-color: rgba(173, 172, 172, 0.16);
 }
+ .input-xs {
+    height: 2px;
+    padding: 2px 5px;
+    font-size: 12px;
+    line-height: 1.5; //If Placeholder of the input is moved up, rem/modify this.
+    border-radius: 3px;
+}
