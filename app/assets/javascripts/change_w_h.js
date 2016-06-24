@@ -45,14 +45,18 @@ function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_js
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<strong><t class='colorred'>"+oneled_panel.model+"</t></strong></li>");
 
-       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Width: </t>"+"<strong> &nbsp <a href='#' class='js-panels_w-'> - </a> <input disabled='true' class='colorred input-xs' id='js-panels_w' value='"+panels_permitw+"'></input></strong>&nbsp<a href='#' class='js-panels_wp'>+ </a><br>");
-       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Heigth: </t>"+"<strong> &nbsp <a href='#' class='js-panels_h-'> - </a> <input disabled='true' class='colorred input-xs' id='js-panels_h' value='"+panels_permith+"'></input></strong>&nbsp<a href='#' class='js-panels_hp'>+ </a><br>");
+       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Width: </t>"+"<strong> &nbsp <a href='#' class='js-panels_w- colorred'> - </a> <input disabled='true' class='colorred input-xs' id='js-panels_w' value='"+panels_permitw+"'></input></strong>&nbsp<a href='#' class='js-panels_wp'>+ </a><br>");
+       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Heigth: </t>"+"<strong>&nbsp<a href='#' class='js-panels_h- colorred'>- </a> <input disabled='true' class='colorred input-xs' id='js-panels_h' value='"+panels_permith+"'></input></strong>&nbsp<a href='#' class='js-panels_hp'>+ </a><br>");
 
        //$(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Width:  "+"<strong><t class='colorred'>"+panels_permitw+" </t></strong>panels</li>");
        //$(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Heigth:  "+"<strong><t class='colorred'>"+panels_permith+" </t></strong>panels</li>");
 
        //$(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total LED panels:  "+"<strong><t class='colorred' id='totalpanels_permit'>"+totalpanels_permit+"</t></strong></li>");
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total LED panels:  "+"<strong><t class='colorred' id='totalpanels_permit'>"+totalpanels_permit+"</t></strong></li>");
+
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Resolution LED wall:  "+"<strong><t class='colorred'>"+totalpixel_w+"</t></strong>w  X  "+"<strong><t class='colorred'>"+totalpixel_h+"</t></strong>h pixels</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Aspect Ratio:  "+"<strong><t class='colorred'>"+aspectratio+" </t></strong></li>");
+
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Width size:  "+"<strong><t class='colorred'>"+actual_w+" </t></strong>inch or "+"<strong><t class='colorred'>"+(actual_w/12).toFixed(2)+"</t></strong>"+" feet  diff. "+"<strong><t class='colorred'>"+diference_w+"</t></strong> inch</li>");
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Heigth size:  "+"<strong><t class='colorred'>"+actual_h+" </t></strong>inch or "+"<strong><t class='colorred'>"+(actual_h/12).toFixed(2)+"</t></strong>"+" feet diff. "+"<strong><t class='colorred'>"+diference_h+"</t></strong> inch</li>");
@@ -69,10 +73,7 @@ function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_js
 
        getbumper(all_bumpers,reallonger_wall_w,total_weigth);
 
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Resolution LED wall:  "+"<strong><t class='colorred'>"+totalpixel_w+"</t></strong>w  X  "+"<strong><t class='colorred'>"+totalpixel_h+"</t></strong>h pixels</li>");
-
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Aspect Ratio:  "+"<strong><t class='colorred'>"+aspectratio+" </t></strong></li>");
-
+       
        $(".modal").modal("hide");  
      
 
