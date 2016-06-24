@@ -129,7 +129,7 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<strong><t class='colorred'>"+oneled_panel.model+"</t></strong></li>");
 
-       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Width: </t>"+"<strong> &nbsp <a href='#' class='js-panels_w-'> - </a> <input class='colorred input-xs' id='js-panels_w' value='"+panels_permitw+"'></input></strong>&nbsp<a href='#' class='js-panels_w+'>+ </a><br>");
+       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Width: </t>"+"<strong> &nbsp <a href='#' class='js-panels_w-'> - </a> <input disabled='true' class='colorred input-xs' id='js-panels_w' value='"+panels_permitw+"'></input></strong>&nbsp<a href='#' class='js-panels_wp'>+ </a><br>");
        $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Heigth: </t>"+"<strong>-<input class='colorred input-xs' id='js-panels_h' value='"+panels_permith+"'></input></strong><br>");
 
        //$(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Width:  "+"<strong><t class='colorred'>"+panels_permitw+" </t></strong>panels</li>");
@@ -162,22 +162,24 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
 
        
        $(".js-panels_w-").on("click", function(){
-              var new_jspanels_w = ($("#js-panels_w").val()-1);
+              var new_jspanels_w = parseFloat($("#js-panels_w").val())-1;
               var new_jspanels_h = $("#js-panels_h").val();
-              $("#js-panels_w").select();
+          
               change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
      });
-     $(".js-panels_w+").on("click", function(){
-              var new_jspanels_w = ($("#js-panels_w").val()+1);
+     $(".js-panels_wp").on("click", function(){
+              console.log("entro en el positivo");
+              console.log($("#js-panels_w").val());
+              var new_jspanels_w = parseFloat($("#js-panels_w").val()) +1;
+              console.log (new_jspanels_w);
               var new_jspanels_h = $("#js-panels_h").val();
-              $("#js-panels_w").select();
+      
               change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
      });
      $("#js-panels_h").on("change", function(){
               var new_jspanels_w = $("#js-panels_w").val();
               var new_jspanels_h = $("#js-panels_h").val();
-              console.log("segundo llamado");
-              $("#js-panels_h").select();
+        
               change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
      });             
 
