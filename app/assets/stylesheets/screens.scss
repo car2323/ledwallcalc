@@ -3,13 +3,13 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .ledcol{
   margin: 9px;
-  height: 715px;
+  height: 680px;
   overflow-y: auto;
   background-color: rgba(173, 172, 172, 0.16);
 }
 .screencol{
   margin: 9px;
-  height: 715px;
+  height: 680px;
   overflow-y: auto;
   background-color: rgba(173, 172, 172, 0.16);
 }
@@ -23,7 +23,7 @@ ul{
 }
 .resultcol{
   margin: 9px;
-  height: 715px;
+  height: 680px;
   overflow-y: auto;
   background-color: rgba(173, 172, 172, 0.16);
 }
@@ -45,4 +45,33 @@ ul{
   
     font-size: 14px;
   
+}
+
+.js-panels_w-{
+text-decoration:none;
+}
+.js-panels_w-:hover 
+{
+   text-decoration: none;
+}
+.js-panels_h-{
+text-decoration:none;
+}
+.js-panels_h-:hover 
+{
+   text-decoration: none;
+}
+.js-panels_wp{
+text-decoration:none;
+}
+.js-panels_wp:hover 
+{
+   text-decoration: none;
+}
+.js-panels_hp{
+text-decoration:none;
+}
+.js-panels_hp:hover 
+{
+   text-decoration: none;
 }
