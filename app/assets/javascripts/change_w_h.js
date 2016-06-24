@@ -46,7 +46,7 @@ function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_js
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<strong><t class='colorred'>"+oneled_panel.model+"</t></strong></li>");
 
        $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Width: </t>"+"<strong> &nbsp <a href='#' class='js-panels_w-'> - </a> <input disabled='true' class='colorred input-xs' id='js-panels_w' value='"+panels_permitw+"'></input></strong>&nbsp<a href='#' class='js-panels_wp'>+ </a><br>");
-       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Heigth: </t>"+"<strong><input class='colorred form-control input-xs' id='js-panels_h' type='number' value='"+panels_permith+"'></input></strong><br>");
+       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Heigth: </t>"+"<strong> &nbsp <a href='#' class='js-panels_h-'> - </a> <input disabled='true' class='colorred input-xs' id='js-panels_h' value='"+panels_permith+"'></input></strong>&nbsp<a href='#' class='js-panels_hp'>+ </a><br>");
 
        //$(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Width:  "+"<strong><t class='colorred'>"+panels_permitw+" </t></strong>panels</li>");
        //$(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Heigth:  "+"<strong><t class='colorred'>"+panels_permith+" </t></strong>panels</li>");
@@ -86,8 +86,7 @@ function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_js
       });
 
       $(".js-panels_wp").on("click", function(){
-              console.log("entro en el positivo");
-              console.log($("#js-panels_w").val());
+              
               var new_jspanels_w = parseFloat($("#js-panels_w").val()) +1;
               console.log (new_jspanels_w);
               var new_jspanels_h = $("#js-panels_h").val();
@@ -95,13 +94,18 @@ function change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_js
               change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
      });
 
-     $("#js-panels_h").on("change", function(){
-               var new_jspanels_w = $("#js-panels_w").val();
-               var new_jspanels_h = $("#js-panels_h").val();
-              // console.log("segundo llamado");
-              $("#js-panels_h").select();
+    $(".js-panels_h-").on("click", function(){
+              var new_jspanels_w = $("#js-panels_w").val();
+              var new_jspanels_h = parseFloat($("#js-panels_h").val())-1;
+        
               change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
-     });                   
+     });  
+     $(".js-panels_hp").on("click", function(){
+              var new_jspanels_w = $("#js-panels_w").val();
+              var new_jspanels_h = parseFloat($("#js-panels_h").val())+1;
+        
+              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
+     });                    
 };
 
 
