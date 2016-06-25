@@ -31,13 +31,13 @@ ul{
   margin: 9px;
   height: 315px;
   overflow-y: auto;
-  background-color: rgba(173, 172, 172, 0.16);
+  background-color: rgba(173, 172, 172, 0.60);
 }
 .screencolmodal{
   margin: 9px;
   height: 315px;
   overflow-y: auto;
-  background-color: rgba(173, 172, 172, 0.16);
+  background-color: rgba(173, 172, 172, 0.60);
 }
  .input-xs {
     height: 28px;
@@ -74,4 +74,7 @@ text-decoration:none;
 .js-panels_hp:hover 
 {
    text-decoration: none;
+}
+.modal-backdrop {
+   background-color: rgba(30, 67, 107, 1.00);
 }
