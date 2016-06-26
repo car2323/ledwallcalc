@@ -2,10 +2,8 @@ $(document).on("page:load ready", function () {
 
      $(".js-createpdf").on("click",function (event){
 
-        var screen_width_list = $(event.currentTarget);
-        var screen_width = screen_width_list.data("descriptionscreen");
     
-       var namefile = prompt("Please enter your file NAME: ", $(".modelpanelpdf").text()+" "+);
+       var namefile = prompt("Please enter your file NAME: ", $(".modelpanelpdf").text()+" "+$(".screen_name").text());
     
         if (namefile != null) 
         {
