@@ -30,6 +30,9 @@ $(document).on("page:load ready", function () {
 
                  var screen_list = $(event.currentTarget);
                  var screen_id = screen_list.data("screenid");
+
+                 var screen_width_name = $(event.currentTarget);
+                 var screen_name = screen_width_name.data("descriptionscreen");
             
 
                  $(".level2screen").append("<strong class='colorblue'>Screen: </strong>");
@@ -57,7 +60,7 @@ $(document).on("page:load ready", function () {
                                       url: string_url2,
                                       success: function (all_bumpers){
                                          console.log("Success");
-                                         getledwall(oneled_panel,screen_width,screen_height,all_bumpers);
+                                         getledwall(oneled_panel,screen_width,screen_height,all_bumpers,screen_name);
                                          
                                       },
                                       error:function (all_bumpers) {
@@ -86,7 +89,7 @@ $(document).on("page:load ready", function () {
 
 
 
-function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
+function getledwall(oneled_panel,screen_width,screen_height, all_bumpers, screen_name){
        $(".js-elementslist").empty();
 
        var panels_permitw = (screen_width / oneled_panel.panelsize_w).toFixed(2);
@@ -127,15 +130,15 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        var aspectratio = (panels_permitw / panels_permith).toFixed(2); 
 
 
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<strong><t class='colorred modelpanelpdf'>"+oneled_panel.model+"</t></strong></li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<strong><t class='colorred modelpanelpdf'>"+oneled_panel.model+" "+"</t></strong> Size or LED wall: <t class='js-screenname colorred'><strong>"+screen_name+"</strong></t></li>");
 
        $(".js-elementslist").append("<t class='form-inline letterresultlist1'>Number of panels in Width: </t>"+"<strong> &nbsp <a href='#' class='js-panels_w- colorred'> - </a> <input disabled='true' class='colorred input-xs' id='js-panels_w' value='"+panels_permitw+"'></input></strong>&nbsp<a href='#' class='js-panels_wp'>+ </a><br>");
        $(".js-elementslist").append("<t class='form-inline letterresultlist1'>Number of panels in Heigth: </t>"+"<strong>&nbsp<a href='#' class='js-panels_h- colorred'>- </a> <input disabled='true' class='colorred input-xs' id='js-panels_h' value='"+panels_permith+"'></input></strong>&nbsp<a href='#' class='js-panels_hp'>+ </a><br>");
       
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total LED panels:  "+"<strong><t class='colorred' id='totalpanels_permit'>"+totalpanels_permit+"</t></strong></li>");
 
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Resolution LED wall:  "+"<strong><t class='colorred'>"+totalpixel_w+"</t></strong>w  X  "+"<strong><t class='colorred'>"+totalpixel_h+"</t></strong>h pixels</li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Aspect Ratio:  "+"<strong><t class='colorred'>"+aspectratio+" </t></strong></li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Resolution LED wall:  "+"<strong><t class='colorred js-totalpixelwpdf'>"+totalpixel_w+"</t></strong>w  X  "+"<strong><t class='colorred js-totalpixelhpdf'>"+totalpixel_h+"</t></strong>h pixels</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Aspect Ratio:  "+"<strong><t class='colorred js-aspectratiopdf'>"+aspectratio+" </t></strong></li>");
 
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Width size:  "+"<strong><t class='colorred'>"+actual_w+" </t></strong>inch or "+"<strong><t class='colorred'>"+(actual_w/12).toFixed(2)+"</t></strong>"+" feet  diff. "+"<strong><t class='colorred'>"+diference_w+"</t></strong> inch</li>");
@@ -162,7 +165,7 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
               var new_jspanels_w = parseFloat($("#js-panels_w").val())-1;
               var new_jspanels_h = $("#js-panels_h").val();
           
-              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
+              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h, screen_name);
      });
      $(".js-panels_wp").on("click", function(){
               
@@ -170,7 +173,7 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
               console.log (new_jspanels_w);
               var new_jspanels_h = $("#js-panels_h").val();
       
-              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
+              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h, screen_name);
      });
      $(".js-panels_h-").on("click", function(){
               console.log($("#js-panels_h").val());
@@ -178,13 +181,13 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
               var new_jspanels_h = parseFloat($("#js-panels_h").val())-1;
               console.log(new_jspanels_h);
         
-              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
+              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h, screen_name);
      });  
      $(".js-panels_hp").on("click", function(){
               var new_jspanels_w = $("#js-panels_w").val();
               var new_jspanels_h = parseFloat($("#js-panels_h").val())+1;
         
-              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h);
+              change_w_h(oneled_panel,screen_width,screen_height, all_bumpers, new_jspanels_w, new_jspanels_h, screen_name);
      });                 
 
 };
