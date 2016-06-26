@@ -65,8 +65,8 @@ function create_PDFequip(namefile){
     doc.text(70,150, $(".js-totalamppdf2").text()+" amp");
     doc.text(70,160, $(".js-totalamppdfnumber2").text());
     doc.text(70,170, $(".js-totalscreenpdfweigth").text()+" Lbs");
-    doc.text(85,180, $(".js-bumperpdfnumberd").text());
-    doc.text(85,190, $(".js-bumperpdfnumbers").text());
+    doc.text(90,180, $(".js-bumperpdfnumberd").text());
+    doc.text(90,190, $(".js-bumperpdfnumbers").text());
     doc.text(70,200, $(".js-bumperpdfweigth").text()+" Lbs");
   
     
