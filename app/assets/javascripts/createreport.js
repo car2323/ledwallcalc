@@ -36,8 +36,8 @@ function create_PDFequip(namefile){
   doc.text(10,80, "Total LED panels: ");
   doc.text(10,90, "Resolution LED wall: ");
   doc.text(10,100, "Aspect Ratio:");
-  doc.text(10,110, "Actual Width size: 59.07 inch or 4.92 feet diff. -12.93 inch:");
-  doc.text(10,120,"Actual Heigth size: 78.76 inch or 6.56 feet diff. -17.24 inch");
+  doc.text(10,110, "Actual Width size: ");
+  doc.text(10,120,"Actual Heigth size: ");
   doc.text(10,130, "Total power consuming 110V: 15 amp");
   doc.text(10,140, "Total feed 20 amp in 110V: 2");
   doc.text(10,150, "Total power consuming 220V: 7 amp");
@@ -57,6 +57,10 @@ function create_PDFequip(namefile){
     doc.text(65,80, $("#totalpanels_permit").text());
     doc.text(65,90, $(".js-totalpixelwpdf").text()+"w X "+$(".js-totalpixelhpdf").text()+"h pixels");
     doc.text(65,100, $(".js-aspectratiopdf").text());
+    doc.text(45,110, $(".js-actualsizepdf_w").text()+" inch or"+ $(".js-actualsize_feedpdf_w").text() +" feet diff. "+ $(".js-actualsizepdfdiff_w").text() + " inch:");
+    doc.text(85,110, $(".js-actualsizepdf_h").text());
+    
+
   
     
 
