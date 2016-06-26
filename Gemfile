@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 #add 05/31/2016
 gem 'devise'   
+#add 06/25/2016
+gem 'jspdf-rails'
 
 gem 'sprockets', '>= 3.0.0'
 
