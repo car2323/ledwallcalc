@@ -141,14 +141,14 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers, screen
 
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Width size:  "+"<strong><t class='colorred js-actualsizepdf_w'>"+actual_w+" </t></strong>inch or "+"<strong><t class='colorred js-actualsize_feedpdf_w'>"+(actual_w/12).toFixed(2)+"</t></strong>"+" feet  diff. "+"<strong><t class='colorred js-actualsizepdfdiff_w'>"+diference_w+"</t></strong> inch</li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Heigth size:  "+"<strong><t class='colorred js-actualsizepdf_h'>"+actual_h+" </t></strong>inch or "+"<strong><t class='colorred js-actualsize_feedpdf_h'>"+(actual_h/12).toFixed(2)+"</t></strong>"+" feet diff. "+"<strong><t class='colorred'>"+diference_h+"</t></strong> inch</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Actual Heigth size:  "+"<strong><t class='colorred js-actualsizepdf_h'>"+actual_h+" </t></strong>inch or "+"<strong><t class='colorred js-actualsize_feedpdf_h'>"+(actual_h/12).toFixed(2)+"</t></strong>"+" feet diff. "+"<strong><t class='colorred js-actualsizepdfdiff_h'>"+diference_h+"</t></strong> inch</li>");
        
       
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 110V:  "+"<strong><t class='colorred'>"+total_poweramp+" </t></strong>amp</li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 110V:  "+"<strong><t class='colorred'>"+total_20amp+"</t></strong></li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 110V:  "+"<strong><t class='colorred js-totalamppdf'>"+total_poweramp+" </t></strong>amp</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 110V:  "+"<strong><t class='colorred js-totalamppdfnumber'>"+total_20amp+"</t></strong></li>");
 
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 220V:  "+"<strong><t class='colorred'>"+total_poweramp220+" </t></strong>amp</li>");
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 220V:  "+"<strong><t class='colorred'>"+total_20amp220+"</t></strong></li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 220V:  "+"<strong><t class='colorred js-totalamppdf2'>"+total_poweramp220+" </t></strong>amp</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 220V:  "+"<strong><t class='colorred js-totalamppdfnumber2'>"+total_20amp220+"</t></strong></li>");
 
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight without bumpers:  "+"<strong><t class='colorred'>"+total_weigth1+" </t></strong>Lbs</li>");
 
