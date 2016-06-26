@@ -141,7 +141,7 @@ if (all_bumpers.length=== 0)
                  $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[1].description +" "+"<strong><t class='colorred js-bumperpdfnumbers'>"+1+"</t></strong></li>");
                  total_weigth = (total_weigth + (all_bumpers[0].weight * number_bumperslong)+ all_bumpers[1].weight);
                  total_weigth = total_weigth.toFixed(2);
-                 $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<strong><t class='colorred'>"+total_weigth+" </t></strong>Lbs</li>");
+                 $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<strong><t class='colorred js-bumperpdfweigth'>"+total_weigth+" </t></strong>Lbs</li>");
                 
            }
        }
