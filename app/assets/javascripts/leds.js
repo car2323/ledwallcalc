@@ -17,7 +17,7 @@ $(document).on("page:load ready", function () {
              var led_id = led_list.data("ledid");
 
              $(".level1led").append("<strong class='colorblue'>LED Panel: </strong>");
-             $(".level1led").append(led_model);
+             $(".level1led").append("<strong class='colorred'>"+ led_model +"</strong>");
              $(".js-screenlist").on("click", function (event) {
                  $(".level2screen").empty();
                  $(".js-elementslist").empty();
@@ -33,9 +33,9 @@ $(document).on("page:load ready", function () {
             
 
                  $(".level2screen").append("<strong class='colorblue'>Screen: </strong>");
-                 $(".level2screen").append(screen_width);
-                 $(".level2screen").append(" x ");
-                 $(".level2screen").append(screen_height);
+                 $(".level2screen").append("<strong class='colorred'>"+ screen_width +"</strong>");
+                 $(".level2screen").append("<t class='colorblack'> x </t>");
+                 $(".level2screen").append("<strong class='colorred'>"+ screen_height +"</strong>");
                  $(".js-calculatebtn").on("click", function (event){
 
                       var resultvalid = select_validations();
