@@ -1,18 +1,21 @@
 $(document).on("page:load ready", function () {
 
      $(".js-createpdf").on("click",function (event){
+
+        var screen_width_list = $(event.currentTarget);
+        var screen_width = screen_width_list.data("descriptionscreen");
     
-       var namefile = prompt("Please enter your file NAME: ", $(".modelpanelpdf").text());
+       var namefile = prompt("Please enter your file NAME: ", $(".modelpanelpdf").text()+" "+);
     
-       if (namefile != null) 
-       {
+        if (namefile != null) 
+        {
         
              create_PDFequip(namefile);
-       }
-       else
-       {
-           $(".js-createpdf").trigger("click");  
-       }
+        }
+       // else
+       // {
+       //     $(".js-createpdf").trigger("click");  
+       // }
        
   
       
