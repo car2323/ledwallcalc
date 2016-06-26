@@ -44,8 +44,8 @@ function create_PDFequip(namefile){
   doc.text(10,160, "Total feed 20 amp in 220V: ");
   doc.text(10,170, "Total Weight without bumpers: ");
   doc.text(10,180, "Total bumpers: Factory Bumper Double: ");
-  doc.text(10,190, "Total bumpers: Factory Bumper Single 1");
-  doc.text(10,200, "Total Weight with bumpers: 278.10 Lbs");
+  doc.text(10,190, "Total bumpers: Factory Bumper Single: ");
+  doc.text(10,200, "Total Weight with bumpers: ");
   
 
 
@@ -65,8 +65,9 @@ function create_PDFequip(namefile){
     doc.text(70,150, $(".js-totalamppdf2").text()+" amp");
     doc.text(70,160, $(".js-totalamppdfnumber2").text());
     doc.text(70,170, $(".js-totalscreenpdfweigth").text()+" Lbs");
-    doc.text(70,180, $(".js-bumperpdfnumber").text());
-    doc.text(70,180, $(".js-bumperpdfnumber").text()+" Lbs");
+    doc.text(70,180, $(".js-bumperpdfnumberd").text());
+    doc.text(70,190, $(".js-bumperpdfnumbers").text());
+    doc.text(70,200, $(".js-bumperpdfweigth").text()+" Lbs");
   
     
 
