@@ -1,23 +1,8 @@
-(document).on("page:load ready", function () {
+$(document).on("page:load ready", function () {
 
      $(".js-createpdf").on("click",function (event){
-
-      event.preventDefault();
-
-      var equipment_id_btn = $(event.currentTarget);
-      var equipment_id = equipment_id_btn.data("equip");
-      console.log(equipment_id);
-       $.ajax({       
-              url: "/api/equipments/"+ equipment_id,
-              success: function (equipment){
-                 create_PDFequip(equipment);
-         
-              },
-              error:function (equipment) {
-                  console.log("It failed. :( ");
-                  console.log(theError.responseJSON);
-              }
-        }); 
+       
+      
    });
 });
 function create_PDFequip(one_equipment){
@@ -25,7 +10,7 @@ function create_PDFequip(one_equipment){
   var doc = new jsPDF();
 
 
-  doc.addImage(imgData, 'JPEG', 0, 0, 210, 30);
+  
   doc.setFont("helvetica");
   doc.setFontSize(30);
   /*doc.setLineWidth(1.5);
