@@ -3,7 +3,7 @@ $(document).on("page:load ready", function () {
      $(".js-createpdf").on("click",function (event){
 
     
-       var namefile = prompt("Please enter your file NAME: ", $(".modelpanelpdf").text()+" "+$(".screen_name").text());
+       var namefile = prompt("Please enter your file NAME: ", $(".modelpanelpdf").text()+" "+$(".js-screenname").text());
     
         if (namefile != null) 
         {
@@ -51,10 +51,14 @@ function create_PDFequip(namefile){
 
   doc.setFontType("bold");
   doc.setTextColor(150);
-    doc.text(55,50, $(".modelpanelpdf").text());
+    doc.text(35,50, $(".modelpanelpdf").text()+" Size or LED wall: "+ $(".js-screenname").text());
     doc.text(65,60, $("#js-panels_w").val());
 	  doc.text(65,70, $("#js-panels_h").val());
- //    doc.text(55,70, one_equipment.model);
+    doc.text(65,80, $("#totalpanels_permit").text());
+    doc.text(65,90, $(".js-totalpixelwpdf").text()+"w X "+$(".js-totalpixelhpdf").text()+"h pixels");
+    doc.text(65,100, $(".js-aspectratiopdf").text());
+  
+    
 
 	// doc.text(55,80, one_equipment.serial);
 	// doc.text(55,90, one_equipment.brand);
