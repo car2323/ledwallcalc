@@ -1,14 +1,24 @@
 $(document).on("page:load ready", function () {
 
      $(".js-createpdf").on("click",function (event){
-       console.log($(".modelpanelpdf").text());
+    
+       var namefile = prompt("Please enter your file NAME: ", $(".modelpanelpdf").text());
+    
+       if (namefile != null) 
+       {
+        
+             create_PDFequip(namefile);
+       }
+       else
+       {
+           $(".js-createpdf").trigger("click");  
+       }
        
-       
-       create_PDFequip();
+  
       
    });
 });
-function create_PDFequip(){
+function create_PDFequip(namefile){
 
   var doc = new jsPDF();
 
@@ -19,7 +29,7 @@ function create_PDFequip(){
   doc.setFontSize(12);
   doc.text(10,30,"");
   doc.text(10,40,"");
-  doc.text(10,50, "Model:: ");
+  doc.text(10,50, "Model: ");
   doc.text(10,60, "Number of panels in Width: ");
   doc.text(10,70, "Number of panels in Heigth: ");
   doc.text(10,80, "Total LED panels: ");
@@ -29,19 +39,20 @@ function create_PDFequip(){
   doc.text(10,120,"Actual Heigth size: 78.76 inch or 6.56 feet diff. -17.24 inch");
   doc.text(10,130, "Total power consuming 110V: 15 amp");
   doc.text(10,140, "Total feed 20 amp in 110V: 2");
-  doc.text(10,150, "Total feed 20 amp in 110V: 2");
-  doc.text(10,160, "Total power consuming 220V: 7 amp");
-  doc.text(10,170, "");
-  doc.text(10,180, "");
-  doc.text(10,190, "REPORT DATE: ");
+  doc.text(10,150, "Total power consuming 220V: 7 amp");
+  doc.text(10,160, "Total feed 20 amp in 220V: 2");
+  doc.text(10,170, "Total Weight without bumpers: 264.00 Lbs");
+  doc.text(10,180, "Total bumpers: Factory Bumper Double 1");
+  doc.text(10,190, "Total bumpers: Factory Bumper Single 1");
+  doc.text(10,200, "Total Weight with bumpers: 278.10 Lbs");
   
 
 
   doc.setFontType("bold");
   doc.setTextColor(150);
     doc.text(55,50, $(".modelpanelpdf").text());
-    doc.text(55,60, $(".js-panels_w").text());
-	  doc.text(55,60, $(".js-panels_h").text());
+    doc.text(65,60, $("#js-panels_w").val());
+	  doc.text(65,70, $("#js-panels_h").val());
  //    doc.text(55,70, one_equipment.model);
 
 	// doc.text(55,80, one_equipment.serial);
@@ -72,7 +83,7 @@ function create_PDFequip(){
      
 
  //doc.save(one_equipment.name +"_"+ one_equipment.serial);
-    doc.save("_testing");
+    doc.save(namefile);
 };
 
 
