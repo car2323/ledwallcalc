@@ -127,10 +127,10 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers){
        var aspectratio = (panels_permitw / panels_permith).toFixed(2); 
 
 
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<strong><t class='colorred'>"+oneled_panel.model+"</t></strong></li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Model:   "+"<strong><t class='colorred modelpanelpdf'>"+oneled_panel.model+"</t></strong></li>");
 
-       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Width: </t>"+"<strong> &nbsp <a href='#' class='js-panels_w- colorred'> - </a> <input disabled='true' class='colorred input-xs' id='js-panels_w' value='"+panels_permitw+"'></input></strong>&nbsp<a href='#' class='js-panels_wp'>+ </a><br>");
-       $(".js-elementslist").append("<t class='form-inline letterresultlist'>Number of panels in Heigth: </t>"+"<strong>&nbsp<a href='#' class='js-panels_h- colorred'>- </a> <input disabled='true' class='colorred input-xs' id='js-panels_h' value='"+panels_permith+"'></input></strong>&nbsp<a href='#' class='js-panels_hp'>+ </a><br>");
+       $(".js-elementslist").append("<t class='form-inline letterresultlist1'>Number of panels in Width: </t>"+"<strong> &nbsp <a href='#' class='js-panels_w- colorred'> - </a> <input disabled='true' class='colorred input-xs' id='js-panels_w' value='"+panels_permitw+"'></input></strong>&nbsp<a href='#' class='js-panels_wp'>+ </a><br>");
+       $(".js-elementslist").append("<t class='form-inline letterresultlist1'>Number of panels in Heigth: </t>"+"<strong>&nbsp<a href='#' class='js-panels_h- colorred'>- </a> <input disabled='true' class='colorred input-xs' id='js-panels_h' value='"+panels_permith+"'></input></strong>&nbsp<a href='#' class='js-panels_hp'>+ </a><br>");
       
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total LED panels:  "+"<strong><t class='colorred' id='totalpanels_permit'>"+totalpanels_permit+"</t></strong></li>");
 

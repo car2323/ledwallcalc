@@ -1,11 +1,14 @@
 $(document).on("page:load ready", function () {
 
      $(".js-createpdf").on("click",function (event){
-       
+       console.log($(".modelpanelpdf").text());
+       js-panels_w
+       js-panels_h
+       create_PDFequip();
       
    });
 });
-function create_PDFequip(one_equipment){
+function create_PDFequip(){
 
   var doc = new jsPDF();
 
@@ -13,22 +16,19 @@ function create_PDFequip(one_equipment){
   
   doc.setFont("helvetica");
   doc.setFontSize(30);
-  /*doc.setLineWidth(1.5);
-  doc.line(0, 35, 300, 35);*/
-
   doc.setFontSize(12);
   doc.text(10,30,"");
   doc.text(10,40,"");
-  doc.text(10,50, "CATEGORY: ");
-  doc.text(10,60, "NAME: ");
-  doc.text(10,70, "MODEL: ");
-  doc.text(10,80, "SERIAL: ");
-  doc.text(10,90, "BRAND: ");
-  doc.text(10,100, "PURCHASED DATE:");
-  doc.text(10,110, "ORIGINAL PRICE:");
-   doc.text(10,120,"");
-  doc.text(10,130,"");
-  doc.text(10,140, "Current Difference against original price: ");
+  doc.text(10,50, "Model:: ");
+  doc.text(10,60, "Number of panels in Width: ");
+  doc.text(10,70, "Number of panels in Heigth: ");
+  doc.text(10,80, "Total LED panels: ");
+  doc.text(10,90, "Resolution LED wall: ");
+  doc.text(10,100, "Aspect Ratio:");
+  doc.text(10,110, "Actual Width size: 59.07 inch or 4.92 feet diff. -12.93 inch:");
+   doc.text(10,120,"Actual Heigth size: 78.76 inch or 6.56 feet diff. -17.24 inch");
+  doc.text(10,130, "Total power consuming 110V: 15 amp");
+  doc.text(10,140, "Total feed 20 amp in 110V: 2");
   doc.text(10,150, "Current Difference against original price  plus cost of all maintenance: ");
   doc.text(10,160, "Price after depreciation: ");
  
@@ -38,8 +38,8 @@ function create_PDFequip(one_equipment){
 
   doc.setFontType("bold");
   doc.setTextColor(150);
-    doc.text(55,50, one_equipment.category);
-	doc.text(55,60, one_equipment.name);
+    doc.text(55,50, $(".modelpanelpdf").text());
+	doc.text(55,60, );
     doc.text(55,70, one_equipment.model);
 
 	doc.text(55,80, one_equipment.serial);
