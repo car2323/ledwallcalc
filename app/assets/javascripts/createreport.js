@@ -40,10 +40,10 @@ function create_PDFequip(namefile){
   doc.text(10,120, "Actual Heigth size:  ");
   doc.text(10,130, "Total power consuming 110V: ");
   doc.text(10,140, "Total feed 20 amp in 110V: ");
-  doc.text(10,150, "Total power consuming 220V: 7 amp");
+  doc.text(10,150, "Total power consuming 220V: ");
   doc.text(10,160, "Total feed 20 amp in 220V: ");
-  doc.text(10,170, "Total Weight without bumpers: 264.00 Lbs");
-  doc.text(10,180, "Total bumpers: Factory Bumper Double 1");
+  doc.text(10,170, "Total Weight without bumpers: ");
+  doc.text(10,180, "Total bumpers: Factory Bumper Double: ");
   doc.text(10,190, "Total bumpers: Factory Bumper Single 1");
   doc.text(10,200, "Total Weight with bumpers: 278.10 Lbs");
   
@@ -59,11 +59,14 @@ function create_PDFequip(namefile){
     doc.text(65,100, $(".js-aspectratiopdf").text());
     doc.text(45,110, $(".js-actualsizepdf_w").text()+" inch or "+ $(".js-actualsize_feedpdf_w").text()+" feet diff. "+ $(".js-actualsizepdfdiff_w").text() + " inch:");
     doc.text(46,120, $(".js-actualsizepdf_h").text()+" inch or "+ $(".js-actualsize_feedpdf_h").text()+" feet diff. "+ $(".js-actualsizepdfdiff_h").text() + " inch:");
-    
-    doc.text(75,130, $(".js-totalamppdf").text()+" amp");
-    // doc.text(75,140, $(".js-totalamppdfnumber").text());
-    // doc.text(75,150, $(".js-totalamppdf2").text()+" amp");
-    // doc.text(75,160, $(".js-totalamppdfnumber2").text());
+
+    doc.text(70,130, $(".js-totalamppdf").text()+" amp");
+    doc.text(70,140, $(".js-totalamppdfnumber").text());
+    doc.text(70,150, $(".js-totalamppdf2").text()+" amp");
+    doc.text(70,160, $(".js-totalamppdfnumber2").text());
+    doc.text(70,170, $(".js-totalscreenpdfweigth").text()+" Lbs");
+    doc.text(70,180, $(".js-bumperpdfnumber").text());
+    doc.text(70,180, $(".js-bumperpdfnumber").text()+" Lbs");
   
     
 

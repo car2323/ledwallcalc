@@ -150,7 +150,7 @@ function getledwall(oneled_panel,screen_width,screen_height, all_bumpers, screen
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total power consuming 220V:  "+"<strong><t class='colorred js-totalamppdf2'>"+total_poweramp220+" </t></strong>amp</li>");
        $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total feed 20 amp in 220V:  "+"<strong><t class='colorred js-totalamppdfnumber2'>"+total_20amp220+"</t></strong></li>");
 
-       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight without bumpers:  "+"<strong><t class='colorred'>"+total_weigth1+" </t></strong>Lbs</li>");
+       $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight without bumpers:  "+"<strong><t class='colorred js-totalscreenpdfweigth'>"+total_weigth1+" </t></strong>Lbs</li>");
 
 
        getbumper(all_bumpers,reallonger_wall_w,total_weigth);
@@ -216,7 +216,7 @@ function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
            if ((number_bumperslong % 1 ) === 0)
            {
                   number_bumperslong = Math.floor(number_bumperslong);
-                  $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[0].description +" "+"<strong><t class='colorred'>"+number_bumperslong+"</t></strong></li>");
+                  $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  "+ all_bumpers[0].description +" "+"<strong><t class='colorred js-bumperpdfnumber'>"+number_bumperslong+"</t></strong></li>");
                   total_weigth = (total_weigth + (all_bumpers[0].weight * number_bumperslong));
                   $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<strong><t class='colorred'>"+total_weigth+" </t></strong>Lbs</li>");
            }
