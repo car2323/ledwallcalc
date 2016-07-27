@@ -267,7 +267,7 @@ function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
            if ((number_bumperslong % 1 ) === 0)
            {
                   number_bumperslong = Math.floor(number_bumperslong);
-                  $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  aqui3"+ all_bumpers[0].description +" "+"<strong><t class='colorred js-bumperpdfnumberd'>"+number_bumperslong+"</t></strong></li>");
+                  $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers: "+ all_bumpers[0].description +" "+"<strong><t class='colorred js-bumperpdfnumberd'>"+number_bumperslong+"</t></strong></li>");
                   total_weigth = (total_weigth + (all_bumpers[0].weight * number_bumperslong));
                   total_weigth = total_weigth.toFixed(2);
                   $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<strong><t class='colorred js-bumperpdfweigth'>"+total_weigth+" </t></strong>Lbs</li>");
@@ -275,7 +275,7 @@ function getbumper(all_bumpers,reallonger_wall_w,total_weigth){
            else
            {   
                  number_bumperslong = Math.floor(number_bumperslong);
-                 $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers:  aqui3"+ all_bumpers[0].description +" "+"<strong><t class='colorred js-bumperpdfnumbers'>"+number_bumperslong+"</t></strong></li>");
+                 $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total bumpers: "+ all_bumpers[0].description +" "+"<strong><t class='colorred js-bumperpdfnumbers'>"+number_bumperslong+"</t></strong></li>");
                  total_weigth = (total_weigth + (all_bumpers[0].weight * number_bumperslong));
                  total_weigth = total_weigth.toFixed(2);
                  $(".js-elementslist").append("<li class='letterresultlist form-control'>" +"Total Weight with bumpers:  "+"<strong><t class='colorred js-bumperpdfweigth'>"+total_weigth+" </t></strong>Lbs</li>");
