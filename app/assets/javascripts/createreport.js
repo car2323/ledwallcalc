@@ -69,36 +69,6 @@ function create_PDFequip(namefile){
     doc.text(90,190, $(".js-bumperpdfnumbers").text());
     doc.text(70,200, $(".js-bumperpdfweigth").text()+" Lbs");
   
-    
-
-	// doc.text(55,80, one_equipment.serial);
-	// doc.text(55,90, one_equipment.brand);
-	// var price=one_equipment.original_price.toString();
-	// doc.text(55,100, one_equipment.purchased_date);
-
- //    doc.text(175,140, $(".js-pricelessrental").text() +"$");
- //    doc.text(175,150, $(".js-priceplusmainte").text()+"$");
- //    doc.text(175,160, $(".js-depretaicioninfo").text()+"$");
-  
-    
- //    doc.text(175,190, $(".js-timenow").text());
-
-	//   doc.setTextColor(255, 0, 0);
- //        doc.text(55,110, price+" $");
- //        doc.text(175,170, $(".js-profit").text()+"$");
- //        doc.text(10,170, "PROFIT: ");
-        
-
- //     doc.setTextColor(255, 122, 0)
- //        doc.text(10,180, "RUNNING TIME: ");
- //        doc.text(165,180, $(".js-runningtime").text()+" years");
- //        doc.text(185,180, $(".js-runningtimedays").text()+"days");
- //     doc.setTextColor(255, 255, 255);
- //     doc.setFontSize(30);
- //        doc.text(58,20,"payEquipment.com");
-     
-
- //doc.save(one_equipment.name +"_"+ one_equipment.serial);
     doc.save(namefile);
 };
 
